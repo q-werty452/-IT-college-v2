@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Главная — IT COLLEGE</title>
+  <link rel="icon" href="img/favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="progress-bar"></div>
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="img/favicon.png" alt="IT COLLEGE" width="110" height="38" style="height:38px;width:auto;display:block">
+    </a>
+    <div class="nav-links">
+            <div class="nav-item">
+              <a href="abiturientam.html" class="nav-link" data-i18n="nav_abit">Абитуриентам <span class="arrow">▾</span></a>
+              <div class="nav-dropdown"><a href="abiturientam.html">Главная абитуриента</a><a href="open-day.html">День открытых дверей</a><a href="priyemnaya-komissiya.html">Приёмная комиссия</a><a href="budjet-mesta.html">Бюджетные места</a><a href="college2025-2026.html">Приём 2025/26</a><a href="perevod.html">Перевод из другого учебного заведения</a><a href="stoimost.html">Стоимость обучения</a><a href="submit-documents.html">Подать документы онлайн</a></div>
+            </div><div class="nav-item"><a href="spec.html" class="nav-link" data-i18n="nav_programs">Программы</a></div>
+            <div class="nav-item">
+              <a href="#" class="nav-link" data-i18n="nav_students">Студентам <span class="arrow">▾</span></a>
+              <div class="nav-dropdown"><a href="graduates-full.html">Выпускники</a><a href="blog.html">Новости</a><a href="director.html">Директор</a><a href="kontakty.html">Контакты</a><a href="otvety-na-voprosy.html">Вопросы и ответы</a></div>
+            </div><div class="nav-item"><a href="blog.html" class="nav-link" data-i18n="nav_news">Новости</a></div><div class="nav-item"><a href="kontakty.html" class="nav-link" data-i18n="nav_contacts">Контакты</a></div></div>
+    <div class="lang-switcher">
+      <button class="lang-btn active" data-lang="ru" onclick="setLang('ru')">RU</button>
+      <button class="lang-btn" data-lang="ky" onclick="setLang('ky')">KY</button>
+      <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+    </div>
+    <div class="nav-btns">
+      <a href="submit-documents.html" class="btn btn-primary btn-sm" data-i18n="btn_apply">Поступить</a>
+      <a href="https://e-bilim.kg/" target="_blank" class="btn btn-ebilim btn-sm">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+        E-bilim
+      </a>
+    </div>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Меню">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="nav-mobile" id="nav-mobile">
+  <div class="nav-mobile-inner">
+    <button class="nav-mobile-close" id="nav-mobile-close"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    <div style="margin-top:40px">
+      <div class="nav-mobile-section"><div class="nav-mobile-label">Абитуриентам</div><a href="abiturientam.html">Абитуриентам</a><a href="abiturientam.html" class="sub">Главная абитуриента</a><a href="open-day.html" class="sub">День открытых дверей</a><a href="priyemnaya-komissiya.html" class="sub">Приёмная комиссия</a><a href="budjet-mesta.html" class="sub">Бюджетные места</a><a href="college2025-2026.html" class="sub">Приём 2025/26</a><a href="perevod.html" class="sub">Перевод из другого учебного заведения</a><a href="stoimost.html" class="sub">Стоимость обучения</a><a href="submit-documents.html" class="sub">Подать документы онлайн</a></div><div class="nav-mobile-section"><div class="nav-mobile-label">Программы</div><a href="spec.html">Программы</a></div><div class="nav-mobile-section"><div class="nav-mobile-label">Студентам</div><a href="#">Студентам</a><a href="graduates-full.html" class="sub">Выпускники</a><a href="blog.html" class="sub">Новости</a><a href="director.html" class="sub">Директор</a><a href="kontakty.html" class="sub">Контакты</a><a href="otvety-na-voprosy.html" class="sub">Вопросы и ответы</a></div><div class="nav-mobile-section"><div class="nav-mobile-label">Новости</div><a href="blog.html">Новости</a></div><div class="nav-mobile-section"><div class="nav-mobile-label">Контакты</div><a href="kontakty.html">Контакты</a></div>
+      <div style="display:flex;gap:8px;margin-top:20px;flex-wrap:wrap;">
+        <a href="submit-documents.html" class="btn btn-primary">Поступить</a>
+        <a href="https://e-bilim.kg/" target="_blank" class="btn btn-ebilim">E-bilim</a>
+      </div>
+    </div>
+  </div>
+</div>
+<button id="btt" aria-label="Вверх"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg></button>
+
+<section class="hero">
+  <div class="hero-dots"></div>
+  <div class="hero-inner container">
+    <div>
+      <div class="hero-badge">
+        <span class="hero-badge-dot"></span>
+        <span data-i18n="hero_badge">Приём 2025/2026 открыт</span>
+      </div>
+      <h1><span data-i18n="hero_h1a">Начни карьеру</span><br>в <span data-i18n="hero_h1b">IT уже сегодня</span></h1>
+      <p data-i18n="hero_desc">IT COLLEGE — современное профессиональное образование в сфере информационных технологий. Диплом государственного образца. Бюджетные места. Трудоустройство.</p>
+      <div class="hero-btns">
+        <a href="submit-documents.html" class="btn btn-primary btn-lg" style="display:inline-flex;align-items:center;gap:8px" data-i18n="btn_submit"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" ><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 12h6M9 16h4"/></svg> Подать документы</a>
+        <a href="https://e-bilim.kg/" target="_blank" class="btn btn-ebilim btn-lg" data-i18n="btn_ebilim">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+          E-bilim
+        </a>
+        <a href="spec.html" class="btn btn-outline btn-lg" style="color:#fff;border-color:rgba(255,255,255,.5)" data-i18n="btn_programs">Программы →</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card">
+        <div style="margin-bottom:12px;color:rgba(255,255,255,.9)"><svg viewBox="0 0 24 24" width="52" height="52" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
+        <div style="font-size:20px;font-weight:800;margin-bottom:4px">IT COLLEGE</div>
+        <div style="font-size:13px;opacity:.75;margin-bottom:20px">г. Манас, Кыргызстан</div>
+        <div class="hero-stats">
+          <div class="hero-stat"><div class="hero-stat-num">500+</div><div class="hero-stat-label">Студентов обучаются</div></div><div class="hero-stat"><div class="hero-stat-num">6</div><div class="hero-stat-label">Специальностей</div></div><div class="hero-stat"><div class="hero-stat-num">85%</div><div class="hero-stat-label">Трудоустройство</div></div><div class="hero-stat"><div class="hero-stat-num">10+</div><div class="hero-stat-label">Партнёров</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="quick-bar">
+  <div class="quick-inner"><a href="submit-documents.html" class="quick-item"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" ><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 12h6M9 16h4"/></svg></span>Подать документы</a><a href="priyemnaya-komissiya.html" class="quick-item"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" ><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21V12h6v9"/></svg></span>Приёмная комиссия</a><a href="budjet-mesta.html" class="quick-item"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" ><circle cx="12" cy="12" r="10"/><path d="M12 6v12M8 9h5.5a2.5 2.5 0 0 1 0 5H9a2.5 2.5 0 0 0 0 5H16"/></svg></span>Бюджетные места</a><a href="open-day.html" class="quick-item"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" ><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span>День открытых дверей</a><a href="perevod.html" class="quick-item"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" ><path d="M17 2l4 4-4 4"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><path d="M7 22l-4-4 4-4"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg></span>Перевод из другого учебного заведения</a><a href="stoimost.html" class="quick-item"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" ><path d="M2 17l10 5 10-5M2 12l10 5 10-5M2 7l10-5 10 5-10 5z"/></svg></span>Стоимость обучения</a></div>
+</div>
+
+<section class="stats-bar">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item reveal delay-1">
+        <div class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <div class="stat-number"><span data-counter="25" data-suffix="+">25+</span></div>
+        <div class="stat-label">лет опыта</div>
+      </div>
+      <div class="stat-item reveal delay-2">
+        <div class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+        <div class="stat-number"><span data-counter="30" data-suffix="+">30+</span></div>
+        <div class="stat-label">программ</div>
+      </div>
+      <div class="stat-item reveal delay-3">
+        <div class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <div class="stat-number"><span data-counter="500" data-suffix="+">500+</span></div>
+        <div class="stat-label">студентов</div>
+      </div>
+      <div class="stat-item reveal delay-4">
+        <div class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+        <div class="stat-number"><span data-counter="50" data-suffix="+">50+</span></div>
+        <div class="stat-label">преподавателей</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="programs">
+  <div class="container">
+    <div class="section-header text-center">
+      <div class="tag">Программы обучения</div>
+      <h2 class="section-title reveal" style="margin-top:12px">Выберите свою специальность</h2>
+      <p class="section-subtitle reveal">Современные программы, разработанные с учётом требований рынка труда</p>
+    </div>
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="all">Все</button>
+      <button class="filter-btn" data-filter="it">IT</button>
+      <button class="filter-btn" data-filter="economy">Экономика</button>
+      <button class="filter-btn" data-filter="design">Дизайн</button>
+    </div>
+    <div class="programs-grid">
+      <div class="program-card reveal" data-category="it">
+        <div class="program-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+        <div class="program-tag">IT</div>
+        <h3 class="program-name">Программирование</h3>
+        <div class="program-meta">
+          <div class="program-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 3 года</div>
+          <div class="program-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg> Очная форма</div>
+        </div>
+        <a href="spec.html" class="btn btn-outline btn-sm">Подробнее</a>
+      </div>
+      <div class="program-card reveal" data-category="it">
+        <div class="program-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+        <div class="program-tag">IT</div>
+        <h3 class="program-name">Веб-разработка</h3>
+        <div class="program-meta">
+          <div class="program-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 2 года 10 мес</div>
+          <div class="program-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg> Очная форма</div>
+        </div>
+        <a href="spec.html" class="btn btn-outline btn-sm">Подробнее</a>
+      </div>
+      <div class="program-card reveal" data-category="it">
+        <div class="program-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+        <div class="program-tag">IT</div>
+        <h3 class="program-name">Информационная безопасность</h3>
+        <div class="program-meta">
+          <div class="program-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 3 года</div>
+          <div class="program-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg> Очная форма</div>
+        </div>
+        <a href="spec.html" class="btn btn-outline btn-sm">Подробнее</a>
+      </div>
+      <div class="program-card reveal" data-category="it">
+        <div class="program-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg></div>
+        <div class="program-tag">IT</div>
+        <h3 class="program-name">Сетевые технологии</h3>
+        <div class="program-meta">
+          <div class="program-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 2 года 10 мес</div>
+          <div class="program-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg> Очная форма</div>
+        </div>
+        <a href="spec.html" class="btn btn-outline btn-sm">Подробнее</a>
+      </div>
+      <div class="program-card reveal" data-category="economy">
+        <div class="program-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <div class="program-tag">Экономика</div>
+        <h3 class="program-name">Экономика и бухгалтерия</h3>
+        <div class="program-meta">
+          <div class="program-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 2 года 10 мес</div>
+          <div class="program-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg> Очная / Заочная</div>
+        </div>
+        <a href="spec.html" class="btn btn-outline btn-sm">Подробнее</a>
+      </div>
+      <div class="program-card reveal" data-category="design">
+        <div class="program-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.47-1.125-.29-.29-.47-.688-.47-1.125 0-.938.746-1.688 1.688-1.688H16c2.757 0 5-2.243 5-5 0-4.418-4.03-8-9-8z"/></svg></div>
+        <div class="program-tag">Дизайн</div>
+        <h3 class="program-name">Графический дизайн</h3>
+        <div class="program-meta">
+          <div class="program-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 2 года 10 мес</div>
+          <div class="program-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg> Очная форма</div>
+        </div>
+        <a href="spec.html" class="btn btn-outline btn-sm">Подробнее</a>
+      </div>
+    </div>
+    <div class="section-cta">
+      <a href="spec.html" class="btn btn-primary">Все программы <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<section class="section section-muted" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="reveal reveal-left">
+        <div class="tag">О колледже</div>
+        <h2 class="section-title" style="margin-top:12px">Образование нового поколения в сердце Кыргызстана</h2>
+        <p class="section-subtitle" style="margin:0 0 0 0;text-align:left">IT COLLEGE — ведущее учебное заведение в области информационных технологий, экономики и дизайна. Мы готовим специалистов, востребованных на рынке труда.</p>
+        <ul class="about-list">
+          <li class="about-list-item">
+            <div class="about-list-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div class="about-list-text">
+              <h4>Три диплома одновременно</h4>
+              <p>Государственный диплом РФ, Кыргызстана и международный сертификат</p>
+            </div>
+          </li>
+          <li class="about-list-item">
+            <div class="about-list-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+            <div class="about-list-text">
+              <h4>95% трудоустройство</h4>
+              <p>Наши выпускники работают в ведущих IT-компаниях мира</p>
+            </div>
+          </li>
+          <li class="about-list-item">
+            <div class="about-list-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+            <div class="about-list-text">
+              <h4>Международные связи</h4>
+              <p>Партнёрство с университетами России, Германии и Турции</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="about-visual reveal reveal-right">
+        <div class="about-card float">
+          <div class="about-card-badge">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            ТОП-5 колледж Кыргызстана
+          </div>
+          <h3>IT COLLEGE Бишкек</h3>
+          <p>Современный кампус, лаборатории с новейшим оборудованием, опытные преподаватели-практики.</p>
+          <div class="about-card-stats">
+            <div class="about-card-stat"><strong>2000</strong><span>выпускников</span></div>
+            <div class="about-card-stat"><strong>15+</strong><span>партнёров</span></div>
+            <div class="about-card-stat"><strong>6</strong><span>лабораторий</span></div>
+            <div class="about-card-stat"><strong>3</strong><span>диплома</span></div>
+          </div>
+        </div>
+        <div class="about-float-badge">
+          <div class="about-float-badge-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+          <div class="about-float-badge-text"><strong>Рейтинг #1</strong><span>IT Колледж Кыргызстана</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="stats-modern">
+  <div class="container">
+    <div class="stats-modern-grid">
+      <div class="stat-modern-item reveal delay-1">
+        <div class="stat-modern-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <div class="stat-modern-number"><span data-counter="500" data-suffix="+">500+</span></div>
+        <div class="stat-modern-label" data-i18n="stat_students">Студентов обучаются</div>
+      </div>
+      <div class="stat-modern-item reveal delay-2">
+        <div class="stat-modern-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M7 8h.01M11 8h4"/></svg></div>
+        <div class="stat-modern-number"><span data-counter="6" data-suffix="">6</span></div>
+        <div class="stat-modern-label" data-i18n="stat_specs">Специальностей</div>
+      </div>
+      <div class="stat-modern-item reveal delay-3">
+        <div class="stat-modern-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+        <div class="stat-modern-number"><span data-counter="85" data-suffix="%">85%</span></div>
+        <div class="stat-modern-label" data-i18n="stat_employ">Трудоустройство</div>
+      </div>
+      <div class="stat-modern-item reveal delay-4">
+        <div class="stat-modern-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div>
+        <div class="stat-modern-number"><span data-counter="10" data-suffix="+">10+</span></div>
+        <div class="stat-modern-label" data-i18n="stat_partners">Партнёров</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-muted">
+  <div class="container">
+    <div class="section-header">
+      <div class="tag" data-i18n="tag_advantages">Преимущества</div>
+      <h2 class="section-title reveal" data-i18n="sec_adv">IT COLLEGE — это</h2>
+      <p class="section-subtitle reveal" data-i18n="sec_adv_s">Почему тысячи студентов выбирают нас</p>
+    </div>
+    <div class="adv-grid">
+      
+<div class="adv-item reveal delay-1">
+  <div class="adv-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" ><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
+  <div>
+    <div class="adv-title" data-i18n="adv_diploma">Государственный диплом</div>
+    <div class="adv-text" data-i18n="adv_diploma_d">Диплом государственного образца, признанный во всех странах СНГ</div>
+  </div>
+</div>
+<div class="adv-item reveal delay-2">
+  <div class="adv-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" ><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+  <div>
+    <div class="adv-title" data-i18n="adv_equip">Современное оборудование</div>
+    <div class="adv-text" data-i18n="adv_equip_d">Лаборатории оснащены последними моделями компьютеров и серверов</div>
+  </div>
+</div>
+<div class="adv-item reveal delay-3">
+  <div class="adv-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" ><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10A15.3 15.3 0 0 1 12 2z"/></svg></div>
+  <div>
+    <div class="adv-title" data-i18n="adv_intl">Международное партнёрство</div>
+    <div class="adv-text" data-i18n="adv_intl_d">Обмены с вузами Германии, России и Китая</div>
+  </div>
+</div>
+<div class="adv-item reveal delay-4">
+  <div class="adv-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" ><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/><path d="M16 3l4 2-4 2"/></svg></div>
+  <div>
+    <div class="adv-title" data-i18n="adv_teach">Практикующие преподаватели</div>
+    <div class="adv-text" data-i18n="adv_teach_d">Более 70% педагогов — действующие специалисты IT-отрасли</div>
+  </div>
+</div>
+<div class="adv-item reveal delay-5">
+  <div class="adv-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" ><path d="M6 9H3V4h3M18 9h3V4h-3"/><path d="M6 4h12v7a6 6 0 0 1-12 0z"/><path d="M12 17v4"/><path d="M8 21h8"/></svg></div>
+  <div>
+    <div class="adv-title" data-i18n="adv_trophy">Победители олимпиад</div>
+    <div class="adv-text" data-i18n="adv_trophy_d">Многократные призёры республиканских и международных конкурсов</div>
+  </div>
+</div>
+<div class="adv-item reveal delay-1">
+  <div class="adv-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" ><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg></div>
+  <div>
+    <div class="adv-title" data-i18n="adv_employ">Трудоустройство</div>
+    <div class="adv-text" data-i18n="adv_employ_d">Центр карьеры помогает найти работу ещё во время учёбы</div>
+  </div>
+</div>
+<div class="adv-item reveal delay-2">
+  <div class="adv-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" ><circle cx="12" cy="12" r="10"/><path d="M12 6v12M8 9h5.5a2.5 2.5 0 0 1 0 5H9a2.5 2.5 0 0 0 0 5H16"/></svg></div>
+  <div>
+    <div class="adv-title" data-i18n="adv_budget">Бюджетные места</div>
+    <div class="adv-text" data-i18n="adv_budget_d">Государственное финансирование для лучших абитуриентов</div>
+  </div>
+</div>
+<div class="adv-item reveal delay-3">
+  <div class="adv-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" ><path d="M9 3h6M9 3v4l-4.5 6A2 2 0 0 0 6 16h12a2 2 0 0 0 1.5-3.3L15 7V3"/></svg></div>
+  <div>
+    <div class="adv-title" data-i18n="adv_science">Научная деятельность</div>
+    <div class="adv-text" data-i18n="adv_science_d">Участие в исследованиях и стартап-проектах</div>
+  </div>
+</div>
+<div class="adv-item reveal delay-4">
+  <div class="adv-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" ><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+  <div>
+    <div class="adv-title" data-i18n="adv_fast">Ускоренное обучение</div>
+    <div class="adv-text" data-i18n="adv_fast_d">Интенсивные программы для быстрого старта карьеры</div>
+  </div>
+</div>
+    </div>
+  </div>
+</section>
+
+<section class="steps-section" id="admission">
+  <div class="container">
+    <div class="section-header">
+      <div class="tag">Поступление</div>
+      <h2 class="section-title" style="margin-top:12px">Как поступить?</h2>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card reveal delay-1">
+        <div class="step-icon-wrap">
+          <span class="step-num">1</span>
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg>
+        </div>
+        <h4>Выберите программу</h4>
+        <p>Ознакомьтесь с нашими специальностями и выберите подходящую для вас</p>
+      </div>
+      <div class="step-card reveal delay-2">
+        <div class="step-icon-wrap">
+          <span class="step-num">2</span>
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        </div>
+        <h4>Подготовьте документы</h4>
+        <ul>
+          <li>Паспорт / свидетельство о рождении</li>
+          <li>Аттестат об образовании</li>
+          <li>Фото 3×4 (4 штуки)</li>
+          <li>Мед. справка 086-У</li>
+        </ul>
+      </div>
+      <div class="step-card reveal delay-3">
+        <div class="step-icon-wrap">
+          <span class="step-num">3</span>
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 16 12 12 8 16"/><line x1="12" y1="12" x2="12" y2="21"/><path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/></svg>
+        </div>
+        <h4>Подайте заявку онлайн</h4>
+        <p>Заполните форму на сайте или приходите лично: ул. Токтогула, 127, Бишкек</p>
+      </div>
+      <div class="step-card reveal delay-4">
+        <div class="step-icon-wrap">
+          <span class="step-num">4</span>
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <h4>Получите приказ о зачислении</h4>
+        <p>После проверки документов вы получите приказ о зачислении и станете студентом!</p>
+      </div>
+    </div>
+    <div class="steps-cta">
+      <a href="submit-documents.html" class="btn btn-primary btn-lg" style="background:#fff;color:var(--primary)">Подать документы</a>
+    </div>
+  </div>
+</section>
+
+<section class="open-day">
+  <div class="container">
+    <h2>День открытых дверей</h2>
+    <div class="open-day-date">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      Каждую субботу, 10:00–13:00
+    </div>
+    <p>Приходите познакомиться с колледжем, преподавателями и будущими однокурсниками. Экскурсия по кампусу, ответы на все вопросы.</p>
+    <a href="kontakty.html" class="btn btn-primary" style="background:var(--dark);border-color:var(--dark)">Записаться</a>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;margin-bottom:40px">
+      <div>
+        <div class="tag" data-i18n="tag_media">Медиа</div>
+        <h2 class="section-title reveal" style="margin-bottom:0" data-i18n="sec_news">Новости</h2>
+      </div>
+      <a href="blog.html" class="btn btn-outline" data-i18n="btn_all_news">Все новости →</a>
+    </div>
+    <div class="cards-grid">
+      
+<div class="card reveal delay-1 ">
+  <div class="card-img"><img src="https://picsum.photos/seed/n1/600/340" alt="IT COLLEGE открывает новую лабораторию кибербезопасности" loading="lazy"></div>
+  <div class="card-body">
+    <div class="card-meta" style="display:flex;align-items:center;gap:5px"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" ><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> 12.03.2025</div>
+    <div class="card-title">IT COLLEGE открывает новую лабораторию кибербезопасности</div>
+    <div class="card-text">В марте 2025 года в нашем колледже открылась современная лаборатория кибербезопасности, оснащённая последним оборудованием.</div>
+  </div>
+  <div class="card-footer">
+    <a href="detail_news.html" class="btn btn-outline btn-sm">Читать далее →</a>
+  </div>
+</div>
+<div class="card reveal delay-2 ">
+  <div class="card-img"><img src="https://picsum.photos/seed/n2/600/340" alt="Студенты IT COLLEGE победили на республиканской олимпиаде по программированию" loading="lazy"></div>
+  <div class="card-body">
+    <div class="card-meta" style="display:flex;align-items:center;gap:5px"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" ><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> 28.02.2025</div>
+    <div class="card-title">Студенты IT COLLEGE победили на республиканской олимпиаде по программированию</div>
+    <div class="card-text">Команда студентов нашего колледжа завоевала первое место на республиканской олимпиаде по программированию среди ссузов.</div>
+  </div>
+  <div class="card-footer">
+    <a href="detail_news.html" class="btn btn-outline btn-sm">Читать далее →</a>
+  </div>
+</div>
+<div class="card reveal delay-3 ">
+  <div class="card-img"><img src="https://picsum.photos/seed/n3/600/340" alt="Международное партнёрство: новые горизонты для студентов" loading="lazy"></div>
+  <div class="card-body">
+    <div class="card-meta" style="display:flex;align-items:center;gap:5px"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" ><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> 15.02.2025</div>
+    <div class="card-title">Международное партнёрство: новые горизонты для студентов</div>
+    <div class="card-text">IT COLLEGE заключил соглашение о сотрудничестве с ведущими IT-компаниями Кыргызстана и зарубежья.</div>
+  </div>
+  <div class="card-footer">
+    <a href="detail_news.html" class="btn btn-outline btn-sm">Читать далее →</a>
+  </div>
+</div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-muted">
+  <div class="container">
+    <div class="section-header">
+      <div class="tag" data-i18n="tag_success">Успех</div>
+      <h2 class="section-title reveal" data-i18n="sec_grads">Наши выпускники</h2>
+      <p class="section-subtitle reveal" data-i18n="sec_grads_s">Они уже работают в крупнейших компаниях страны</p>
+    </div>
+    <div class="cards-grid">
+      
+<div class="graduate-card reveal delay-1">
+  <img src="https://picsum.photos/seed/g1/200/200" alt="Айбек Касымов" class="grad-photo" loading="lazy">
+  <div class="grad-name">Айбек Касымов</div>
+  <div class="grad-year">Выпуск 2024</div>
+  <div class="grad-job">Junior Developer, ОсОО «Технологии Будущего»</div>
+  <div class="grad-quote">"IT COLLEGE дал мне все необходимые знания для старта карьеры."</div>
+</div>
+<div class="graduate-card reveal delay-2">
+  <img src="https://picsum.photos/seed/g2/200/200" alt="Жаныл Бекова" class="grad-photo" loading="lazy">
+  <div class="grad-name">Жаныл Бекова</div>
+  <div class="grad-year">Выпуск 2024</div>
+  <div class="grad-job">1С-Программист, ЗАО «Финтех КГ»</div>
+  <div class="grad-quote">"Практические занятия помогли мне быстро влиться в рабочий процесс."</div>
+</div>
+<div class="graduate-card reveal delay-3">
+  <img src="https://picsum.photos/seed/g3/200/200" alt="Нурдан Осмонов" class="grad-photo" loading="lazy">
+  <div class="grad-name">Нурдан Осмонов</div>
+  <div class="grad-year">Выпуск 2023</div>
+  <div class="grad-job">Системный администратор, ГК «Мегаком»</div>
+  <div class="grad-quote">"Отличная база знаний и дружный коллектив — это IT COLLEGE."</div>
+</div>
+<div class="graduate-card reveal delay-4">
+  <img src="https://picsum.photos/seed/g4/200/200" alt="Айгуль Токтосунова" class="grad-photo" loading="lazy">
+  <div class="grad-name">Айгуль Токтосунова</div>
+  <div class="grad-year">Выпуск 2023</div>
+  <div class="grad-job">Frontend Developer, Freelance</div>
+  <div class="grad-quote">"Благодаря колледжу я стала самостоятельным специалистом."</div>
+</div>
+    </div>
+    <div class="flex-center mt-32">
+      <a href="graduates-full.html" class="btn btn-primary" data-i18n="btn_all_grads">Все выпускники →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ПАСПОРТ КОЛЛЕДЖА ===== -->
+<section class="section section-muted">
+  <div class="container">
+    <div class="section-header">
+      <div class="tag">Документы</div>
+      <h2 class="section-title reveal">Паспорт колледжа</h2>
+      <p class="section-desc reveal">Лицензии, аккредитации и сертификаты качества IT COLLEGE</p>
+    </div>
+  </div>
+  <div class="cert-scroll-wrapper">
+    <div class="cert-track" id="certTrack">
+
+      <!-- 1 -->
+      <div class="cert-card">
+        <div class="cert-card-top">
+          <div class="cert-ribbon">Лицензия</div>
+          <div class="cert-seal">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77 5.82 21.02 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <div class="cert-org">Министерство образования КР</div>
+        </div>
+        <div class="cert-card-body">
+          <div class="cert-title">Лицензия на осуществление образовательной деятельности</div>
+          <div class="cert-subtitle">Среднее профессиональное образование по IT-специальностям</div>
+          <div class="cert-footer">
+            <span class="cert-year">Выдана: 2018</span>
+            <span class="cert-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Действует</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="cert-card">
+        <div class="cert-card-top" style="background: linear-gradient(135deg,#1a3a5c 0%,#0ea5e9 100%)">
+          <div class="cert-ribbon" style="background:#10b981">Аккредитация</div>
+          <div class="cert-seal">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M9 12l2 2 4-4"/></svg>
+          </div>
+          <div class="cert-org">Агентство по аккредитации КР</div>
+        </div>
+        <div class="cert-card-body">
+          <div class="cert-title">Государственная аккредитация образовательных программ</div>
+          <div class="cert-subtitle">Подтверждение соответствия государственным стандартам образования</div>
+          <div class="cert-footer">
+            <span class="cert-year">Выдана: 2020</span>
+            <span class="cert-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Действует</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="cert-card">
+        <div class="cert-card-top" style="background: linear-gradient(135deg,#7c3aed 0%,#4f46e5 100%)">
+          <div class="cert-ribbon" style="background:#f59e0b">ISO 9001</div>
+          <div class="cert-seal">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+          </div>
+          <div class="cert-org">Bureau Veritas</div>
+        </div>
+        <div class="cert-card-body">
+          <div class="cert-title">Сертификат системы менеджмента качества ISO 9001:2015</div>
+          <div class="cert-subtitle">Управление качеством образовательных процессов и услуг</div>
+          <div class="cert-footer">
+            <span class="cert-year">Выдан: 2021</span>
+            <span class="cert-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Действует</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="cert-card">
+        <div class="cert-card-top" style="background: linear-gradient(135deg,#0c2340 0%,#0369a1 100%)">
+          <div class="cert-ribbon" style="background:#ef4444">Партнёрство</div>
+          <div class="cert-seal">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div class="cert-org">Cisco Networking Academy</div>
+        </div>
+        <div class="cert-card-body">
+          <div class="cert-title">Официальный партнёр Cisco Networking Academy</div>
+          <div class="cert-subtitle">Авторизованный центр обучения по сетевым технологиям Cisco</div>
+          <div class="cert-footer">
+            <span class="cert-year">С 2019 года</span>
+            <span class="cert-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Активно</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5 -->
+      <div class="cert-card">
+        <div class="cert-card-top" style="background: linear-gradient(135deg,#166534 0%,#16a34a 100%)">
+          <div class="cert-ribbon" style="background:#0ea5e9">Microsoft</div>
+          <div class="cert-seal">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="8" height="8" rx="1"/><rect x="13" y="3" width="8" height="8" rx="1"/><rect x="3" y="13" width="8" height="8" rx="1"/><rect x="13" y="13" width="8" height="8" rx="1"/></svg>
+          </div>
+          <div class="cert-org">Microsoft Imagine Academy</div>
+        </div>
+        <div class="cert-card-body">
+          <div class="cert-title">Участник программы Microsoft Imagine Academy</div>
+          <div class="cert-subtitle">Доступ к лицензионному ПО Microsoft и сертификационным курсам</div>
+          <div class="cert-footer">
+            <span class="cert-year">С 2020 года</span>
+            <span class="cert-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Активно</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6 -->
+      <div class="cert-card">
+        <div class="cert-card-top" style="background: linear-gradient(135deg,#92400e 0%,#d97706 100%)">
+          <div class="cert-ribbon" style="background:#6d28d9">Диплом</div>
+          <div class="cert-seal">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+          </div>
+          <div class="cert-org">Министерство образования КР</div>
+        </div>
+        <div class="cert-card-body">
+          <div class="cert-title">Право выдачи диплома государственного образца</div>
+          <div class="cert-subtitle">Выпускники получают диплом о среднем профессиональном образовании</div>
+          <div class="cert-footer">
+            <span class="cert-year">С 2018 года</span>
+            <span class="cert-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Действует</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7 -->
+      <div class="cert-card">
+        <div class="cert-card-top" style="background: linear-gradient(135deg,#be123c 0%,#e11d48 100%)">
+          <div class="cert-ribbon" style="background:#0c2340">Рейтинг</div>
+          <div class="cert-seal">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <div class="cert-org">Национальный рейтинг КР</div>
+        </div>
+        <div class="cert-card-body">
+          <div class="cert-title">Топ-5 колледжей в области ИТ-образования Кыргызстана</div>
+          <div class="cert-subtitle">По результатам независимого рейтинга учебных заведений 2024</div>
+          <div class="cert-footer">
+            <span class="cert-year">2024 год</span>
+            <span class="cert-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Подтверждён</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="cert-nav">
+      <button class="cert-nav-btn" id="certPrev" aria-label="Назад">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <button class="cert-nav-btn" id="certNext" aria-label="Вперёд">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <div class="tag" data-i18n="tag_faq">FAQ</div>
+      <h2 class="section-title reveal" data-i18n="sec_faq">Часто задаваемые вопросы</h2>
+    </div>
+    <div class="faq-list">
+      
+<div class="faq-item">
+  <div class="faq-q">Какие документы нужны для поступления?<span class="faq-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></div>
+  <div class="faq-a">Для поступления необходимы: аттестат о среднем образовании (оригинал), паспорт или свидетельство о рождении, 4 фотографии 3×4 см, медицинская справка формы 086-У.</div>
+</div>
+<div class="faq-item">
+  <div class="faq-q">Есть ли бюджетные места?<span class="faq-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></div>
+  <div class="faq-a">Да, в IT COLLEGE ежегодно выделяются бюджетные места по ряду специальностей. Зачисление на бюджет происходит по результатам вступительных испытаний и конкурса аттестатов.</div>
+</div>
+<div class="faq-item">
+  <div class="faq-q">Какова стоимость обучения на платной основе?<span class="faq-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></div>
+  <div class="faq-a">Стоимость зависит от специальности и формы обучения. В среднем — от 35 000 до 60 000 сомов в год. Подробнее смотрите на странице «Стоимость обучения».</div>
+</div>
+<div class="faq-item">
+  <div class="faq-q">Предоставляется ли общежитие?<span class="faq-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></div>
+  <div class="faq-a">Да, иногородним студентам предоставляется место в общежитии при наличии свободных мест. Стоимость уточняйте в приёмной комиссии.</div>
+</div>
+    </div>
+    <div class="flex-center mt-32">
+      <a href="otvety-na-voprosy.html" class="btn btn-outline" data-i18n="btn_all_faq">Все вопросы</a>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--primary);padding:60px 24px;text-align:center;color:#fff">
+  <div class="container">
+    <h2 class="reveal" style="font-size:clamp(24px,4vw,40px);font-weight:800;margin-bottom:12px" data-i18n="cta_title">Готов начать? Поступай сейчас!</h2>
+    <p class="reveal" style="opacity:.85;margin-bottom:32px;font-size:16px" data-i18n="cta_desc">Приём документов открыт. Бюджетные и платные места.</p>
+    <div class="flex-center">
+      <a href="submit-documents.html" class="btn btn-lg" style="background:#fff;color:var(--primary);display:inline-flex;align-items:center;gap:8px" data-i18n="btn_submit"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" ><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 12h6M9 16h4"/></svg> Подать документы</a>
+      <a href="https://e-bilim.kg/" target="_blank" class="btn btn-ebilim btn-lg" data-i18n="btn_ebilim">E-bilim</a>
+      <a href="kontakty.html" class="btn btn-lg" style="background:rgba(255,255,255,.15);color:#fff;border:1.5px solid rgba(255,255,255,.4)" data-i18n="btn_contact">Связаться</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <img src="img/favicon.png" alt="IT COLLEGE" style="height:32px;width:auto;filter:brightness(10)">
+      </div>
+      <p>Профессиональное IT-образование в Кыргызстане. Диплом государственного образца. Бюджетные места.</p>
+      <p style="margin-top:8px;display:flex;align-items:center;gap:6px"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> г. Манас, ул. Центральная, 45</p>
+      <p style="display:flex;align-items:center;gap:6px"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> +996 507 022 202</p>
+      <p style="display:flex;align-items:center;gap:6px"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 7L2 7"/></svg> info@itcollege.kg</p>
+      <div class="footer-socials">
+        <a href="https://t.me/itcollegemanas" target="_blank" class="social-btn" title="Telegram"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M22 2 11 13M22 2 15 22l-4-9-9-4 20-7z"/></svg></a>
+        <a href="https://vk.com/itcollegemanas"  target="_blank" class="social-btn" title="VK"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M3 7h3.5c.3 2.5 1.5 7 3 7 1 0 1.5-2 1.5-4.5V7H14c-.2 4.5 1 9 3 9M17 11.5c1.5 0 2.5-1 2.5-2.5 0-1.5-1-2.5-2.5-2.5"/></svg></a>
+        <a href="https://www.youtube.com/@itcollegemanas" target="_blank" class="social-btn" title="YouTube"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M10 9l6 3-6 3V9z"/></svg></a>
+        <a href="https://wa.me/996507022202" target="_blank" class="social-btn" title="WhatsApp"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></a>
+      </div>
+    </div>
+    <div>
+      <h4>Абитуриентам</h4>
+      <ul>
+        <li><a href="abiturientam.html">Информация</a></li>
+        <li><a href="open-day.html">День открытых дверей</a></li>
+        <li><a href="priyemnaya-komissiya.html">Приёмная комиссия</a></li>
+        <li><a href="budjet-mesta.html">Бюджетные места</a></li>
+        <li><a href="stoimost.html">Стоимость обучения</a></li>
+        <li><a href="submit-documents.html">Подать документы</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Колледж</h4>
+      <ul>
+        <li><a href="spec.html">Программы обучения</a></li>
+        <li><a href="graduates-full.html">Выпускники</a></li>
+        <li><a href="blog.html">Новости</a></li>
+        <li><a href="director.html">Руководство</a></li>
+        <li><a href="otvety-na-voprosy.html">FAQ</a></li>
+        <li><a href="kontakty.html">Контакты</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Контакты</h4>
+      <ul>
+        <li><a href="tel:+996507022202">+996 507 022 202</a></li>
+        <li><a href="tel:+996755022202">+996 755 022 202</a></li>
+        <li><a href="mailto:info@itcollege.kg">info@itcollege.kg</a></li>
+        <li><a href="https://t.me/itcollegemanas" target="_blank">Telegram</a></li>
+        <li><a href="otvety-na-voprosy.html">Задать вопрос</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 IT COLLEGE — Все права защищены</span>
+    <span>Разработано IT-RUN Studio</span>
+  </div>
+</footer>
+
+<script>
+// ── Scroll + UI ──────────────────────────────────────────────────────────
+var pb  = document.getElementById('progress-bar');
+var btt = document.getElementById('btt');
+var nb  = document.querySelector('.navbar');
+window.addEventListener('scroll', function() {
+  var s = window.scrollY, h = document.documentElement.scrollHeight - window.innerHeight;
+  if (pb)  pb.style.width = (h ? s/h*100 : 0) + '%';
+  if (btt) btt.classList.toggle('visible', s > 400);
+  if (nb)  nb.classList.toggle('scrolled', s > 60);
+}, {passive:true});
+if (btt) btt.onclick = function() { window.scrollTo({top:0,behavior:'smooth'}); };
+
+// ── Mobile nav ───────────────────────────────────────────────────────────
+var toggle = document.getElementById('nav-toggle');
+var mobile = document.getElementById('nav-mobile');
+var mclose = document.getElementById('nav-mobile-close');
+if (toggle) toggle.onclick = function() { mobile.classList.add('open'); };
+if (mclose) mclose.onclick = function() { mobile.classList.remove('open'); };
+if (mobile) mobile.addEventListener('click', function(e) {
+  if (e.target === mobile) mobile.classList.remove('open');
+});
+
+// ── Programs filter ──────────────────────────────────────────────────────
+document.querySelectorAll('.filter-btn').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    document.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
+    btn.classList.add('active');
+    var filter = btn.getAttribute('data-filter');
+    document.querySelectorAll('.programs-grid .program-card').forEach(function(card) {
+      if (filter === 'all' || card.getAttribute('data-category') === filter) {
+        card.classList.remove('hidden');
+      } else {
+        card.classList.add('hidden');
+      }
+    });
+  });
+});
+
+// ── Scroll reveal ────────────────────────────────────────────────────────
+function animateCounter(el) {
+  var target = parseInt(el.getAttribute('data-counter'), 10);
+  var suffix = el.getAttribute('data-suffix') || '';
+  var duration = 1200;
+  var start = null;
+  function step(ts) {
+    if (!start) start = ts;
+    var p = Math.min((ts - start) / duration, 1);
+    var ease = 1 - Math.pow(1 - p, 3);
+    el.textContent = Math.floor(ease * target) + suffix;
+    if (p < 1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+
+var io = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) {
+    if (e.isIntersecting) {
+      e.target.classList.add('in-view');
+      e.target.querySelectorAll('[data-counter]').forEach(animateCounter);
+      io.unobserve(e.target);
+    }
+  });
+}, {threshold: 0.12});
+document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(function(el) {
+  io.observe(el);
+});
+
+// ── Паспорт колледжа: scroll + drag ──────────────────────────────────────
+(function() {
+  var track = document.getElementById('certTrack');
+  var prev  = document.getElementById('certPrev');
+  var next  = document.getElementById('certNext');
+  if (!track) return;
+
+  var STEP = 308; // card width + gap
+
+  if (prev) prev.onclick = function() { track.scrollBy({ left: -STEP, behavior: 'smooth' }); };
+  if (next) next.onclick = function() { track.scrollBy({ left:  STEP, behavior: 'smooth' }); };
+
+  // drag-to-scroll
+  var isDragging = false, startX, scrollLeft;
+  track.addEventListener('mousedown', function(e) {
+    isDragging = true;
+    track.classList.add('dragging');
+    startX = e.pageX - track.offsetLeft;
+    scrollLeft = track.scrollLeft;
+  });
+  document.addEventListener('mouseup', function() {
+    isDragging = false;
+    track.classList.remove('dragging');
+  });
+  track.addEventListener('mouseleave', function() {
+    isDragging = false;
+    track.classList.remove('dragging');
+  });
+  track.addEventListener('mousemove', function(e) {
+    if (!isDragging) return;
+    e.preventDefault();
+    var x = e.pageX - track.offsetLeft;
+    track.scrollLeft = scrollLeft - (x - startX);
+  });
+})();
+
+// ── FAQ ──────────────────────────────────────────────────────────────────
+document.querySelectorAll('.faq-q').forEach(function(q) {
+  q.onclick = function() { q.closest('.faq-item').classList.toggle('open'); };
+});
+
+
+// ── Translations ─────────────────────────────────────────────────────────
+var T = {
+  ru: {
+    nav_abit:       'Абитуриентам',
+    nav_programs:   'Программы',
+    nav_students:   'Студентам',
+    nav_news:       'Новости',
+    nav_contacts:   'Контакты',
+    btn_apply:      'Поступить',
+    btn_submit:     'Подать документы',
+    btn_ebilim:     'E-bilim',
+    btn_all_news:   'Все новости →',
+    btn_all_grads:  'Все выпускники →',
+    btn_all_faq:    'Все вопросы',
+    btn_read_more:  'Читать далее →',
+    btn_programs:   'Программы →',
+    btn_contact:    'Связаться',
+    hero_badge:     'Приём 2025/2026 открыт',
+    hero_h1a:       'Начни карьеру',
+    hero_h1b:       'в IT уже сегодня',
+    hero_desc:      'IT COLLEGE — современное профессиональное образование в сфере информационных технологий. Диплом государственного образца. Бюджетные места. Трудоустройство.',
+    stat_students:  'Студентов обучаются',
+    stat_specs:     'Специальностей',
+    stat_employ:    'Трудоустройство',
+    stat_partners:  'Партнёров',
+    tag_study:      'Обучение',
+    tag_advantages: 'Преимущества',
+    tag_media:      'Медиа',
+    tag_success:    'Успех',
+    tag_faq:        'FAQ',
+    sec_programs:   'Программы обучения',
+    sec_programs_s: '6 востребованных специальностей в сфере IT',
+    sec_adv:        'IT COLLEGE — это',
+    sec_adv_s:      'Почему тысячи студентов выбирают нас',
+    sec_news:       'Новости',
+    sec_grads:      'Наши выпускники',
+    sec_grads_s:    'Они уже работают в крупнейших компаниях страны',
+    sec_faq:        'Часто задаваемые вопросы',
+    cta_title:      'Готов начать? Поступай сейчас!',
+    cta_desc:       'Приём документов открыт. Бюджетные и платные места.',
+    adv_diploma:    'Государственный диплом',
+    adv_diploma_d:  'Диплом государственного образца, признанный во всех странах СНГ',
+    adv_equip:      'Современное оборудование',
+    adv_equip_d:    'Лаборатории оснащены последними моделями компьютеров и серверов',
+    adv_intl:       'Международное партнёрство',
+    adv_intl_d:     'Обмены с вузами Германии, России и Китая',
+    adv_teach:      'Практикующие преподаватели',
+    adv_teach_d:    'Более 70% педагогов — действующие специалисты IT-отрасли',
+    adv_trophy:     'Победители олимпиад',
+    adv_trophy_d:   'Многократные призёры республиканских и международных конкурсов',
+    adv_employ:     'Трудоустройство',
+    adv_employ_d:   'Центр карьеры помогает найти работу ещё во время учёбы',
+    adv_budget:     'Бюджетные места',
+    adv_budget_d:   'Государственное финансирование для лучших абитуриентов',
+    adv_science:    'Научная деятельность',
+    adv_science_d:  'Участие в исследованиях и стартап-проектах',
+    adv_fast:       'Ускоренное обучение',
+    adv_fast_d:     'Интенсивные программы для быстрого старта карьеры',
+  },
+  ky: {
+    nav_abit:       'Абитуриенттерге',
+    nav_programs:   'Программалар',
+    nav_students:   'Студенттерге',
+    nav_news:       'Жаңылыктар',
+    nav_contacts:   'Байланыш',
+    btn_apply:      'Тапшыруу',
+    btn_submit:     'Документ тапшыруу',
+    btn_ebilim:     'E-bilim',
+    btn_all_news:   'Бардык жаңылыктар →',
+    btn_all_grads:  'Бардык бүтүрүүчүлөр →',
+    btn_all_faq:    'Бардык суроолор',
+    btn_read_more:  'Толук окуу →',
+    btn_programs:   'Программалар →',
+    btn_contact:    'Байланышуу',
+    hero_badge:     'Кабыл алуу 2025/2026 ачылды',
+    hero_h1a:       'Карьераңды баста',
+    hero_h1b:       'IT-де бүгүн эле',
+    hero_desc:      'IT COLLEGE — маалыматтык технологиялар чөйрөсүндөгү заманбап кесиптик билим берүү. Мамлекеттик диплом. Бюджеттик орундар. Жумушка орношуу.',
+    stat_students:  'Студент окуйт',
+    stat_specs:     'Адестик',
+    stat_employ:    'Жумушка орношуу',
+    stat_partners:  'Өнөктөштөр',
+    tag_study:      'Окутуу',
+    tag_advantages: 'Артыкчылыктар',
+    tag_media:      'Медиа',
+    tag_success:    'Ийгилик',
+    tag_faq:        'FAQ',
+    sec_programs:   'Окуу программалары',
+    sec_programs_s: 'IT чөйрөсүндө 6 суранычтуу адестик',
+    sec_adv:        'IT COLLEGE — бул',
+    sec_adv_s:      'Эмне үчүн миңдеген студент бизди тандайт',
+    sec_news:       'Жаңылыктар',
+    sec_grads:      'Биздин бүтүрүүчүлөр',
+    sec_grads_s:    'Алар чоң компанияларда иштешет',
+    sec_faq:        'Көп берилүүчү суроолор',
+    cta_title:      'Баштоого даярсыңбы? Азыр тапшыр!',
+    cta_desc:       'Документтерди кабыл алуу ачылды. Бюджеттик жана акылуу орундар.',
+    adv_diploma:    'Мамлекеттик диплом',
+    adv_diploma_d:  'МДА өлкөлөрүндө таанылган мамлекеттик үлгүдөгү диплом',
+    adv_equip:      'Заманбап жабдуулар',
+    adv_equip_d:    'Лабораториялар акыркы компьютерлер менен жабдылган',
+    adv_intl:       'Эл аралык өнөктөштүк',
+    adv_intl_d:     'Германия, Россия жана Кытайдын жогорку окуу жайлары менен алмашуу',
+    adv_teach:      'Тажрыйбалуу окутуучулар',
+    adv_teach_d:    'Мугалимдердин 70%дан ашыгы IT тармагынын активдүү адистери',
+    adv_trophy:     'Олимпиада жеңүүчүлөрү',
+    adv_trophy_d:   'Республикалык жана эл аралык конкурстардын кайталаган байгелүүлөрү',
+    adv_employ:     'Жумушка орношуу',
+    adv_employ_d:   'Карьера борбору окуу учурунда эле жумуш табууга жардам берет',
+    adv_budget:     'Бюджеттик орундар',
+    adv_budget_d:   'Мыкты абитуриенттер үчүн мамлекеттик каржылоо',
+    adv_science:    'Илимий иш',
+    adv_science_d:  'Изилдөөлөргө жана стартап долбоорлоруна катышуу',
+    adv_fast:       'Тездетилген окутуу',
+    adv_fast_d:     'Карьерани тез баштоо үчүн интенсивдүү программалар',
+  },
+  en: {
+    nav_abit:       'For Applicants',
+    nav_programs:   'Programs',
+    nav_students:   'For Students',
+    nav_news:       'News',
+    nav_contacts:   'Contacts',
+    btn_apply:      'Apply',
+    btn_submit:     'Submit Documents',
+    btn_ebilim:     'E-bilim',
+    btn_all_news:   'All news →',
+    btn_all_grads:  'All graduates →',
+    btn_all_faq:    'All questions',
+    btn_read_more:  'Read more →',
+    btn_programs:   'Programs →',
+    btn_contact:    'Contact us',
+    hero_badge:     'Admissions 2025/2026 open',
+    hero_h1a:       'Start your career',
+    hero_h1b:       'in IT today',
+    hero_desc:      'IT COLLEGE — modern professional education in information technology. State-recognized diploma. Budget places. Career support.',
+    stat_students:  'Students enrolled',
+    stat_specs:     'Specialties',
+    stat_employ:    'Employment rate',
+    stat_partners:  'Partners',
+    tag_study:      'Education',
+    tag_advantages: 'Advantages',
+    tag_media:      'Media',
+    tag_success:    'Success',
+    tag_faq:        'FAQ',
+    sec_programs:   'Study Programs',
+    sec_programs_s: '6 in-demand IT specialties',
+    sec_adv:        'IT COLLEGE is',
+    sec_adv_s:      'Why thousands of students choose us',
+    sec_news:       'News',
+    sec_grads:      'Our Graduates',
+    sec_grads_s:    'They already work at top companies',
+    sec_faq:        'Frequently Asked Questions',
+    cta_title:      'Ready to start? Apply now!',
+    cta_desc:       'Applications are open. Budget and paid places available.',
+    adv_diploma:    'State Diploma',
+    adv_diploma_d:  'State-recognized diploma, valid across all CIS countries',
+    adv_equip:      'Modern Equipment',
+    adv_equip_d:    'Labs equipped with the latest computers and servers',
+    adv_intl:       'International Partnership',
+    adv_intl_d:     'Exchange programs with universities in Germany, Russia and China',
+    adv_teach:      'Practicing Teachers',
+    adv_teach_d:    'Over 70% of instructors are active IT industry professionals',
+    adv_trophy:     'Olympiad Winners',
+    adv_trophy_d:   'Multiple prize-winners of national and international competitions',
+    adv_employ:     'Employment',
+    adv_employ_d:   'Career center helps find jobs even during studies',
+    adv_budget:     'Budget Places',
+    adv_budget_d:   'State funding for the best applicants',
+    adv_science:    'Research',
+    adv_science_d:  'Participation in research projects and startups',
+    adv_fast:       'Accelerated Learning',
+    adv_fast_d:     'Intensive programs for a fast career start',
+  }
+};
+
+var FLAGS = { ru: '🇷🇺', ky: '🇰🇬', en: '🇬🇧' };
+var CODES = { ru: 'RU', ky: 'KY', en: 'EN' };
+
+function setLang(lang) {
+  // Update switcher UI
+  document.querySelectorAll('.lang-btn[data-lang]').forEach(function(b) {
+    b.classList.toggle('active', b.dataset.lang === lang);
+  });
+
+  // Animate: fade out main content
+  var sections = document.querySelectorAll('section, .page-header, .quick-bar, footer');
+  sections.forEach(function(s) { s.classList.add('lang-fade'); });
+
+  setTimeout(function() {
+    // Apply translations
+    var dict = T[lang] || T.ru;
+    document.querySelectorAll('[data-i18n]').forEach(function(el) {
+      var key = el.getAttribute('data-i18n');
+      if (dict[key] !== undefined) el.textContent = dict[key];
+    });
+    // Fade in
+    sections.forEach(function(s) {
+      s.classList.remove('lang-fade');
+      s.classList.add('lang-fade-in');
+      setTimeout(function() { s.classList.remove('lang-fade-in'); }, 400);
+    });
+    // Save
+    try { localStorage.setItem('itcollege_lang', lang); } catch(e){}
+  }, 250);
+}
+
+// Restore saved language
+(function() {
+  try {
+    var saved = localStorage.getItem('itcollege_lang');
+    if (saved && saved !== 'ru' && T[saved]) setLang(saved);
+  } catch(e) {}
+})();
+</script>
+
+</body>
+</html>

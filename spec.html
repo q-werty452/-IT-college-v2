@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Программы обучения — IT COLLEGE Кыргызстан</title>
+  <meta name="description" content="Все образовательные программы IT COLLEGE. Программирование, веб-разработка, кибербезопасность, экономика, дизайн." />
+  <link rel="icon" href="img/favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="spec-programs.css">
+  <script src="i18n.js"></script>
+</head>
+<body>
+
+<!-- ─── v2 Navigation ─────────────────────────────────────────────── -->
+<div id="progress-bar"></div>
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="img/favicon.png" alt="IT COLLEGE" width="110" height="38" style="height:38px;width:auto;display:block">
+    </a>
+    <div class="nav-links">
+      <div class="nav-item">
+        <a href="abiturientam.html" class="nav-link" data-i18n="nav_abit">Абитуриентам <span class="arrow">▾</span></a>
+        <div class="nav-dropdown"><a href="abiturientam.html">Главная абитуриента</a><a href="open-day.html">День открытых дверей</a><a href="priyemnaya-komissiya.html">Приёмная комиссия</a><a href="budjet-mesta.html">Бюджетные места</a><a href="college2025-2026.html">Приём 2025/26</a><a href="perevod.html">Перевод из другого учебного заведения</a><a href="stoimost.html">Стоимость обучения</a><a href="submit-documents.html">Подать документы онлайн</a></div>
+      </div>
+      <div class="nav-item"><a href="spec.html" class="nav-link active" data-i18n="nav_programs">Программы</a></div>
+      <div class="nav-item">
+        <a href="#" class="nav-link" data-i18n="nav_students">Студентам <span class="arrow">▾</span></a>
+        <div class="nav-dropdown"><a href="graduates-full.html">Выпускники</a><a href="blog.html">Новости</a><a href="director.html">Директор</a><a href="kontakty.html">Контакты</a><a href="otvety-na-voprosy.html">Вопросы и ответы</a></div>
+      </div>
+      <div class="nav-item"><a href="blog.html" class="nav-link" data-i18n="nav_news">Новости</a></div>
+      <div class="nav-item"><a href="kontakty.html" class="nav-link" data-i18n="nav_contacts">Контакты</a></div>
+    </div>
+    <div class="lang-switcher">
+      <button class="lang-btn active" data-lang="ru" onclick="setLang('ru')">RU</button>
+      <button class="lang-btn" data-lang="ky" onclick="setLang('ky')">KY</button>
+      <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+    </div>
+    <div class="nav-btns">
+      <a href="submit-documents.html" class="btn btn-primary btn-sm" data-i18n="btn_apply">Поступить</a>
+      <a href="https://e-bilim.kg/" target="_blank" class="btn btn-ebilim btn-sm">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+        E-bilim
+      </a>
+    </div>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Меню"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="nav-mobile" id="nav-mobile">
+  <div class="nav-mobile-inner">
+    <button class="nav-mobile-close" id="nav-mobile-close"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    <div style="margin-top:40px">
+      <div class="nav-mobile-section"><div class="nav-mobile-label">Абитуриентам</div><a href="abiturientam.html">Абитуриентам</a><a href="abiturientam.html" class="sub">Главная абитуриента</a><a href="open-day.html" class="sub">День открытых дверей</a><a href="priyemnaya-komissiya.html" class="sub">Приёмная комиссия</a><a href="budjet-mesta.html" class="sub">Бюджетные места</a><a href="college2025-2026.html" class="sub">Приём 2025/26</a><a href="perevod.html" class="sub">Перевод из другого учебного заведения</a><a href="stoimost.html" class="sub">Стоимость обучения</a><a href="submit-documents.html" class="sub">Подать документы онлайн</a></div>
+      <div class="nav-mobile-section"><div class="nav-mobile-label">Программы</div><a href="spec.html">Программы</a></div>
+      <div class="nav-mobile-section"><div class="nav-mobile-label">Студентам</div><a href="#">Студентам</a><a href="graduates-full.html" class="sub">Выпускники</a><a href="blog.html" class="sub">Новости</a><a href="director.html" class="sub">Директор</a><a href="kontakty.html" class="sub">Контакты</a><a href="otvety-na-voprosy.html" class="sub">Вопросы и ответы</a></div>
+      <div class="nav-mobile-section"><div class="nav-mobile-label">Новости</div><a href="blog.html">Новости</a></div>
+      <div class="nav-mobile-section"><div class="nav-mobile-label">Контакты</div><a href="kontakty.html">Контакты</a></div>
+      <div style="display:flex;gap:8px;margin-top:20px;flex-wrap:wrap;">
+        <a href="submit-documents.html" class="btn btn-primary">Поступить</a>
+        <a href="https://e-bilim.kg/" target="_blank" class="btn btn-ebilim">E-bilim</a>
+      </div>
+    </div>
+  </div>
+</div>
+<button id="btt" aria-label="Вверх"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg></button>
+
+<!-- ─── Content from kopiya (wrapped in .pgm-wrap for scoped CSS) ─── -->
+<div class="pgm-wrap">
+<main>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="index.html" class="breadcrumb-item">Главная</a>
+        <span class="breadcrumb-sep">›</span>
+        <span class="breadcrumb-item active" data-i18n="spec_breadcrumb">Программы</span>
+      </nav>
+      <h1 data-i18n="spec_hero_h1">Программы обучения</h1>
+      <p data-i18n="spec_hero_p">Современные специальности для карьеры в IT, экономике и дизайне</p>
+      <div style="margin-top:24px;">
+        <div class="search-bar" style="max-width:480px;">
+          <input type="text" placeholder="Поиск программы..." data-i18n-ph="spec_search_ph" id="programSearch" />
+          <button type="button">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            Найти
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Programs -->
+  <section class="section bg-light">
+    <div class="container">
+
+      <!-- Filter panel -->
+      <div class="filter-panel">
+        <div class="filter-group">
+          <label>Направление:</label>
+          <select class="filter-select" id="dirFilter">
+            <option value="">Все</option>
+            <option value="it">IT</option>
+            <option value="economy">Экономика</option>
+            <option value="design">Дизайн</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label>Форма обучения:</label>
+          <select class="filter-select" id="formFilter">
+            <option value="">Все формы</option>
+            <option value="full">Очная</option>
+            <option value="part">Заочная</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label>Сортировка:</label>
+          <select class="filter-select">
+            <option>По популярности</option>
+            <option>По сроку (возрастание)</option>
+            <option>По сроку (убывание)</option>
+            <option>По названию</option>
+          </select>
+        </div>
+        <div class="view-toggle">
+          <button class="view-btn active" title="Сетка">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          </button>
+          <button class="view-btn" title="Список">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Filter tabs -->
+      <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all" data-i18n="spec_filter_all">Все программы</button>
+        <button class="filter-btn" data-filter="it" data-i18n="spec_filter_it">IT</button>
+        <button class="filter-btn" data-filter="economy" data-i18n="spec_filter_eco">Экономика</button>
+        <button class="filter-btn" data-filter="design" data-i18n="spec_filter_des">Дизайн</button>
+      </div>
+
+      <!-- Programs grid -->
+      <div class="programs-grid">
+
+        <div class="program-card reveal reveal-up" data-category="it">
+          <div class="program-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+          <div class="program-tag">IT</div>
+          <h3 class="program-name">Программирование</h3>
+          <div class="program-meta">
+            <div class="program-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>3 года</div>
+            <div class="program-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>Очная</div>
+            <div class="program-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>35 000 сом/год</div>
+          </div>
+          <a href="submit-documents.html" class="btn btn-blue btn-sm">Поступить</a>
+        </div>
+
+        <div class="program-card reveal reveal-up" data-category="it">
+          <div class="program-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+          <div class="program-tag">IT</div>
+          <h3 class="program-name">Веб-разработка</h3>
+          <div class="program-meta">
+            <div class="program-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>2 г. 10 мес</div>
+            <div class="program-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>Очная</div>
+            <div class="program-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>32 000 сом/год</div>
+          </div>
+          <a href="submit-documents.html" class="btn btn-blue btn-sm">Поступить</a>
+        </div>
+
+        <div class="program-card reveal reveal-up" data-category="it">
+          <div class="program-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+          <div class="program-tag">IT</div>
+          <h3 class="program-name">Информационная безопасность</h3>
+          <div class="program-meta">
+            <div class="program-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>3 года</div>
+            <div class="program-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>Очная</div>
+            <div class="program-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>38 000 сом/год</div>
+          </div>
+          <a href="submit-documents.html" class="btn btn-blue btn-sm">Поступить</a>
+        </div>
+
+        <div class="program-card reveal reveal-up" data-category="it">
+          <div class="program-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg></div>
+          <div class="program-tag">IT</div>
+          <h3 class="program-name">Сетевые технологии</h3>
+          <div class="program-meta">
+            <div class="program-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>2 г. 10 мес</div>
+            <div class="program-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>Очная</div>
+            <div class="program-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>30 000 сом/год</div>
+          </div>
+          <a href="submit-documents.html" class="btn btn-blue btn-sm">Поступить</a>
+        </div>
+
+        <div class="program-card reveal reveal-up" data-category="it">
+          <div class="program-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
+          <div class="program-tag">IT</div>
+          <h3 class="program-name">Разработка мобильных приложений</h3>
+          <div class="program-meta">
+            <div class="program-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>2 г. 10 мес</div>
+            <div class="program-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>Очная</div>
+            <div class="program-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>34 000 сом/год</div>
+          </div>
+          <a href="submit-documents.html" class="btn btn-blue btn-sm">Поступить</a>
+        </div>
+
+        <div class="program-card reveal reveal-up" data-category="it">
+          <div class="program-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg></div>
+          <div class="program-tag">IT</div>
+          <h3 class="program-name">Базы данных и аналитика</h3>
+          <div class="program-meta">
+            <div class="program-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>2 г. 10 мес</div>
+            <div class="program-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>Очная</div>
+            <div class="program-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>31 000 сом/год</div>
+          </div>
+          <a href="submit-documents.html" class="btn btn-blue btn-sm">Поступить</a>
+        </div>
+
+        <div class="program-card reveal reveal-up" data-category="economy">
+          <div class="program-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+          <div class="program-tag">Экономика</div>
+          <h3 class="program-name">Экономика и бухгалтерия</h3>
+          <div class="program-meta">
+            <div class="program-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>2 г. 10 мес</div>
+            <div class="program-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>Очная/Заочная</div>
+            <div class="program-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>25 000 сом/год</div>
+          </div>
+          <a href="submit-documents.html" class="btn btn-blue btn-sm">Поступить</a>
+        </div>
+
+        <div class="program-card reveal reveal-up" data-category="economy">
+          <div class="program-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+          <div class="program-tag">Экономика</div>
+          <h3 class="program-name">Финансы и кредит</h3>
+          <div class="program-meta">
+            <div class="program-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>2 г. 10 мес</div>
+            <div class="program-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>Заочная</div>
+            <div class="program-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>22 000 сом/год</div>
+          </div>
+          <a href="submit-documents.html" class="btn btn-blue btn-sm">Поступить</a>
+        </div>
+
+        <div class="program-card reveal reveal-up" data-category="economy">
+          <div class="program-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div>
+          <div class="program-tag">Экономика</div>
+          <h3 class="program-name">Менеджмент</h3>
+          <div class="program-meta">
+            <div class="program-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>2 г. 10 мес</div>
+            <div class="program-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>Очная/Заочная</div>
+            <div class="program-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>24 000 сом/год</div>
+          </div>
+          <a href="submit-documents.html" class="btn btn-blue btn-sm">Поступить</a>
+        </div>
+
+        <div class="program-card reveal reveal-up" data-category="design">
+          <div class="program-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.47-1.125-.29-.29-.47-.688-.47-1.125 0-.938.746-1.688 1.688-1.688H16c2.757 0 5-2.243 5-5 0-4.418-4.03-8-9-8z"/></svg></div>
+          <div class="program-tag">Дизайн</div>
+          <h3 class="program-name">Графический дизайн</h3>
+          <div class="program-meta">
+            <div class="program-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>2 г. 10 мес</div>
+            <div class="program-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>Очная</div>
+            <div class="program-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>28 000 сом/год</div>
+          </div>
+          <a href="submit-documents.html" class="btn btn-blue btn-sm">Поступить</a>
+        </div>
+
+        <div class="program-card reveal reveal-up" data-category="design">
+          <div class="program-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+          <div class="program-tag">Дизайн</div>
+          <h3 class="program-name">UI/UX Дизайн</h3>
+          <div class="program-meta">
+            <div class="program-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>2 г. 10 мес</div>
+            <div class="program-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>Очная</div>
+            <div class="program-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>30 000 сом/год</div>
+          </div>
+          <a href="submit-documents.html" class="btn btn-blue btn-sm">Поступить</a>
+        </div>
+
+      </div>
+
+      <!-- Pagination -->
+      <div class="pagination">
+        <button class="page-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg></button>
+        <button class="page-btn active">1</button>
+        <button class="page-btn">2</button>
+        <button class="page-btn">3</button>
+        <button class="page-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2 data-i18n="spec_cta_h2">Нашли свою программу?</h2>
+      <p data-i18n="spec_cta_p">Подайте документы онлайн и станьте студентом IT COLLEGE уже сегодня</p>
+      <div class="cta-btns">
+        <a href="submit-documents.html" class="btn btn-primary btn-lg" data-i18n="spec_cta_btn1">Подать документы</a>
+        <a href="otvety-na-voprosy.html" class="btn btn-secondary btn-lg" data-i18n="spec_cta_btn2">Часто задаваемые вопросы</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+</div><!-- end .pgm-wrap -->
+
+<!-- ─── v2 License & Accreditation ───────────────────────────────── -->
+<section class="section section-muted">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title reveal">Лицензия и аккредитация</h2>
+    </div>
+    <div class="cards-grid" style="grid-template-columns:repeat(auto-fill,minmax(340px,1fr))">
+      <div class="adv-item reveal">
+        <div class="adv-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+        <div>
+          <div class="adv-title">Государственная аккредитация</div>
+          <div class="adv-text">Бессрочная аккредитация Министерства образования КР. Диплом признаётся во всех странах СНГ.</div>
+        </div>
+      </div>
+      <div class="adv-item reveal delay-2">
+        <div class="adv-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21V12h6v9"/></svg></div>
+        <div>
+          <div class="adv-title">Государственная лицензия</div>
+          <div class="adv-text">Лицензия на осуществление образовательной деятельности выдана Министерством образования и науки КР.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── v2 Footer ─────────────────────────────────────────────────── -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <img src="img/favicon.png" alt="IT COLLEGE" style="height:32px;width:auto;filter:brightness(10)">
+      </div>
+      <p>Профессиональное IT-образование в Кыргызстане. Диплом государственного образца. Бюджетные места.</p>
+      <p style="margin-top:8px;display:flex;align-items:center;gap:6px"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> г. Манас, ул. Центральная, 45</p>
+      <p style="display:flex;align-items:center;gap:6px"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> +996 507 022 202</p>
+      <p style="display:flex;align-items:center;gap:6px"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 7L2 7"/></svg> info@itcollege.kg</p>
+      <div class="footer-socials">
+        <a href="https://t.me/itcollegemanas" target="_blank" class="social-btn" title="Telegram"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M22 2 11 13M22 2 15 22l-4-9-9-4 20-7z"/></svg></a>
+        <a href="https://vk.com/itcollegemanas"  target="_blank" class="social-btn" title="VK"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M3 7h3.5c.3 2.5 1.5 7 3 7 1 0 1.5-2 1.5-4.5V7H14c-.2 4.5 1 9 3 9M17 11.5c1.5 0 2.5-1 2.5-2.5 0-1.5-1-2.5-2.5-2.5"/></svg></a>
+        <a href="https://www.youtube.com/@itcollegemanas" target="_blank" class="social-btn" title="YouTube"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M10 9l6 3-6 3V9z"/></svg></a>
+        <a href="https://wa.me/996507022202" target="_blank" class="social-btn" title="WhatsApp"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></a>
+      </div>
+    </div>
+    <div>
+      <h4>Абитуриентам</h4>
+      <ul>
+        <li><a href="abiturientam.html">Информация</a></li>
+        <li><a href="open-day.html">День открытых дверей</a></li>
+        <li><a href="priyemnaya-komissiya.html">Приёмная комиссия</a></li>
+        <li><a href="budjet-mesta.html">Бюджетные места</a></li>
+        <li><a href="stoimost.html">Стоимость обучения</a></li>
+        <li><a href="submit-documents.html">Подать документы</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Колледж</h4>
+      <ul>
+        <li><a href="spec.html">Программы обучения</a></li>
+        <li><a href="graduates-full.html">Выпускники</a></li>
+        <li><a href="blog.html">Новости</a></li>
+        <li><a href="director.html">Руководство</a></li>
+        <li><a href="otvety-na-voprosy.html">FAQ</a></li>
+        <li><a href="kontakty.html">Контакты</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Контакты</h4>
+      <ul>
+        <li><a href="tel:+996507022202">+996 507 022 202</a></li>
+        <li><a href="tel:+996755022202">+996 755 022 202</a></li>
+        <li><a href="mailto:info@itcollege.kg">info@itcollege.kg</a></li>
+        <li><a href="https://t.me/itcollegemanas" target="_blank">Telegram</a></li>
+        <li><a href="otvety-na-voprosy.html">Задать вопрос</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 IT COLLEGE — Все права защищены</span>
+    <span>Разработано IT-RUN Studio</span>
+  </div>
+</footer>
+
+<script>
+// ── v2 Scroll + UI ───────────────────────────────────────────────────────
+var pb  = document.getElementById('progress-bar');
+var btt = document.getElementById('btt');
+var nb  = document.querySelector('.navbar');
+window.addEventListener('scroll', function() {
+  var s = window.scrollY, h = document.documentElement.scrollHeight - window.innerHeight;
+  if (pb)  pb.style.width = (h ? s/h*100 : 0) + '%';
+  if (btt) btt.classList.toggle('visible', s > 400);
+  if (nb)  nb.classList.toggle('scrolled', s > 60);
+}, {passive:true});
+if (btt) btt.onclick = function() { window.scrollTo({top:0,behavior:'smooth'}); };
+
+// ── v2 Mobile nav ────────────────────────────────────────────────────────
+var toggle = document.getElementById('nav-toggle');
+var mobile = document.getElementById('nav-mobile');
+var mclose = document.getElementById('nav-mobile-close');
+if (toggle) toggle.onclick = function() { mobile.classList.add('open'); };
+if (mclose) mclose.onclick = function() { mobile.classList.remove('open'); };
+if (mobile) mobile.addEventListener('click', function(e) {
+  if (e.target === mobile) mobile.classList.remove('open');
+});
+
+// ── v2 Lang switcher ─────────────────────────────────────────────────────
+var ls = document.getElementById('lang-switcher');
+var lb = document.getElementById('lang-btn');
+if (lb) lb.onclick = function(e) { e.stopPropagation(); ls.classList.toggle('open'); };
+document.addEventListener('click', function() { if (ls) ls.classList.remove('open'); });
+
+// ── Reveal animations (kopiya style — .revealed) ─────────────────────────
+(function() {
+  var revealEls = document.querySelectorAll('.pgm-wrap .reveal, .pgm-wrap .reveal-up, .pgm-wrap .reveal-left, .pgm-wrap .reveal-right');
+  if (!revealEls.length) return;
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  revealEls.forEach(function(el) { observer.observe(el); });
+
+  // v2 license section reveal (.in-view)
+  var v2els = document.querySelectorAll('.section-muted .reveal');
+  var io2 = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) { e.target.classList.add('in-view'); io2.unobserve(e.target); }
+    });
+  }, {threshold: 0.12});
+  v2els.forEach(function(el) { io2.observe(el); });
+})();
+
+// ── Program filter tabs ──────────────────────────────────────────────────
+(function() {
+  var filterBtns = document.querySelectorAll('.filter-btn[data-filter]');
+  if (!filterBtns.length) return;
+  filterBtns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      filterBtns.forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      var filter = btn.dataset.filter;
+      document.querySelectorAll('.program-card[data-category]').forEach(function(card) {
+        var show = filter === 'all' || card.dataset.category === filter;
+        card.style.display = show ? '' : 'none';
+        if (show) {
+          card.classList.remove('revealed');
+          setTimeout(function() { card.classList.add('revealed'); }, 10);
+        }
+      });
+    });
+  });
+})();
+
+// ── Program search ───────────────────────────────────────────────────────
+(function() {
+  var searchInput = document.getElementById('programSearch');
+  if (!searchInput) return;
+  searchInput.addEventListener('input', function() {
+    var q = searchInput.value.toLowerCase().trim();
+    document.querySelectorAll('.program-card').forEach(function(card) {
+      var name = card.querySelector('.program-name') ? card.querySelector('.program-name').textContent.toLowerCase() : '';
+      card.style.display = (!q || name.includes(q)) ? '' : 'none';
+    });
+  });
+})();
+
+// ── View toggle (grid / list) ────────────────────────────────────────────
+(function() {
+  var btns = document.querySelectorAll('.view-btn');
+  var grid = document.querySelector('.programs-grid');
+  if (!btns.length || !grid) return;
+  btns[0].addEventListener('click', function() {
+    btns.forEach(function(b) { b.classList.remove('active'); });
+    this.classList.add('active');
+    grid.style.gridTemplateColumns = '';
+  });
+  btns[1].addEventListener('click', function() {
+    btns.forEach(function(b) { b.classList.remove('active'); });
+    this.classList.add('active');
+    grid.style.gridTemplateColumns = '1fr';
+  });
+})();
+
+// ── Translations handled by i18n.js ──────────────────────────────────────
+</script>
+
+</body>
+</html>

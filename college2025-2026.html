@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Приём 2025/2026 — IT COLLEGE</title>
+  <link rel="icon" href="img/favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="progress-bar"></div>
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="img/favicon.png" alt="IT COLLEGE" width="110" height="38" style="height:38px;width:auto;display:block">
+    </a>
+    <div class="nav-links">
+            <div class="nav-item">
+              <a href="abiturientam.html" class="nav-link active" data-i18n="nav_abit">Абитуриентам <span class="arrow">▾</span></a>
+              <div class="nav-dropdown"><a href="abiturientam.html">Главная абитуриента</a><a href="open-day.html">День открытых дверей</a><a href="priyemnaya-komissiya.html">Приёмная комиссия</a><a href="budjet-mesta.html">Бюджетные места</a><a href="college2025-2026.html">Приём 2025/26</a><a href="perevod.html">Перевод из другого учебного заведения</a><a href="stoimost.html">Стоимость обучения</a><a href="submit-documents.html">Подать документы онлайн</a></div>
+            </div><div class="nav-item"><a href="spec.html" class="nav-link" data-i18n="nav_programs">Программы</a></div>
+            <div class="nav-item">
+              <a href="#" class="nav-link" data-i18n="nav_students">Студентам <span class="arrow">▾</span></a>
+              <div class="nav-dropdown"><a href="graduates-full.html">Выпускники</a><a href="blog.html">Новости</a><a href="director.html">Директор</a><a href="kontakty.html">Контакты</a><a href="otvety-na-voprosy.html">Вопросы и ответы</a></div>
+            </div><div class="nav-item"><a href="blog.html" class="nav-link" data-i18n="nav_news">Новости</a></div><div class="nav-item"><a href="kontakty.html" class="nav-link" data-i18n="nav_contacts">Контакты</a></div></div>
+    <div class="lang-switcher" id="lang-switcher">
+      <button class="lang-btn" id="lang-btn" aria-label="Язык">
+        <span class="lang-flag" id="lang-flag">🇷🇺</span>
+        <span class="lang-code" id="lang-code">RU</span>
+        <span class="lang-arrow">▾</span>
+      </button>
+      <div class="lang-dropdown" id="lang-dropdown">
+        <button class="lang-option active" data-lang="ru" onclick="setLang('ru')">
+          <span class="lang-flag">🇷🇺</span>
+          <span class="lang-name">Русский</span>
+          <span class="lang-check">✓</span>
+        </button>
+        <button class="lang-option" data-lang="ky" onclick="setLang('ky')">
+          <span class="lang-flag">🇰🇬</span>
+          <span class="lang-name">Кыргызча</span>
+          <span class="lang-check">✓</span>
+        </button>
+        <button class="lang-option" data-lang="en" onclick="setLang('en')">
+          <span class="lang-flag">🇬🇧</span>
+          <span class="lang-name">English</span>
+          <span class="lang-check">✓</span>
+        </button>
+      </div>
+    </div>
+    <div class="nav-btns">
+      <a href="submit-documents.html" class="btn btn-primary btn-sm" data-i18n="btn_apply">Поступить</a>
+      <a href="https://e-bilim.kg/" target="_blank" class="btn btn-ebilim btn-sm">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+        E-bilim
+      </a>
+    </div>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Меню">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="nav-mobile" id="nav-mobile">
+  <div class="nav-mobile-inner">
+    <button class="nav-mobile-close" id="nav-mobile-close"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    <div style="margin-top:40px">
+      <div class="nav-mobile-section"><div class="nav-mobile-label">Абитуриентам</div><a href="abiturientam.html">Абитуриентам</a><a href="abiturientam.html" class="sub">Главная абитуриента</a><a href="open-day.html" class="sub">День открытых дверей</a><a href="priyemnaya-komissiya.html" class="sub">Приёмная комиссия</a><a href="budjet-mesta.html" class="sub">Бюджетные места</a><a href="college2025-2026.html" class="sub">Приём 2025/26</a><a href="perevod.html" class="sub">Перевод из другого учебного заведения</a><a href="stoimost.html" class="sub">Стоимость обучения</a><a href="submit-documents.html" class="sub">Подать документы онлайн</a></div><div class="nav-mobile-section"><div class="nav-mobile-label">Программы</div><a href="spec.html">Программы</a></div><div class="nav-mobile-section"><div class="nav-mobile-label">Студентам</div><a href="#">Студентам</a><a href="graduates-full.html" class="sub">Выпускники</a><a href="blog.html" class="sub">Новости</a><a href="director.html" class="sub">Директор</a><a href="kontakty.html" class="sub">Контакты</a><a href="otvety-na-voprosy.html" class="sub">Вопросы и ответы</a></div><div class="nav-mobile-section"><div class="nav-mobile-label">Новости</div><a href="blog.html">Новости</a></div><div class="nav-mobile-section"><div class="nav-mobile-label">Контакты</div><a href="kontakty.html">Контакты</a></div>
+      <div style="display:flex;gap:8px;margin-top:20px;flex-wrap:wrap;">
+        <a href="submit-documents.html" class="btn btn-primary">Поступить</a>
+        <a href="https://e-bilim.kg/" target="_blank" class="btn btn-ebilim">E-bilim</a>
+      </div>
+    </div>
+  </div>
+</div>
+<button id="btt" aria-label="Вверх"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg></button>
+
+<div class="page-header">
+  <h1>Приём 2025/2026</h1>
+  <p>Правила и условия приёма на 2025/2026 учебный год</p>
+  <div class="breadcrumb"><a href="index.html">Главная</a> / <a href="abiturientam.html">Абитуриентам</a> / Приём 2025/26</div>
+</div>
+<section class="section">
+  <div class="container">
+    <div class="reveal" style="overflow:auto;border-radius:var(--radius);border:1px solid var(--border);margin-bottom:32px">
+      <table class="tbl">
+        <thead><tr><th>Специальность</th><th style="text-align:center">Бюджет</th><th style="text-align:center">Платно</th><th style="text-align:center">Срок</th></tr></thead>
+        <tbody><tr>
+      <td><strong>Информационные системы</strong></td>
+      <td style="text-align:center">10</td>
+      <td style="text-align:center">20</td>
+      <td style="text-align:center">2 года 10 мес.</td>
+    </tr><tr>
+      <td><strong>Веб-разработка</strong></td>
+      <td style="text-align:center">8</td>
+      <td style="text-align:center">15</td>
+      <td style="text-align:center">2 года 10 мес.</td>
+    </tr><tr>
+      <td><strong>Кибербезопасность</strong></td>
+      <td style="text-align:center">5</td>
+      <td style="text-align:center">10</td>
+      <td style="text-align:center">3 года 10 мес.</td>
+    </tr><tr>
+      <td><strong>1С:Бухгалтерия</strong></td>
+      <td style="text-align:center">8</td>
+      <td style="text-align:center">20</td>
+      <td style="text-align:center">2 года 10 мес.</td>
+    </tr><tr>
+      <td><strong>Программирование</strong></td>
+      <td style="text-align:center">6</td>
+      <td style="text-align:center">12</td>
+      <td style="text-align:center">3 года 10 мес.</td>
+    </tr><tr>
+      <td><strong>Сетевое и системное администрирование</strong></td>
+      <td style="text-align:center">7</td>
+      <td style="text-align:center">15</td>
+      <td style="text-align:center">2 года 10 мес.</td>
+    </tr></tbody>
+      </table>
+    </div>
+    <div style="background:var(--light);border-radius:var(--radius);padding:32px" class="reveal">
+      <h3 style="margin-bottom:16px">Сроки приёма документов</h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px">
+        <div style="background:#fff;border-radius:10px;padding:16px"><div style="font-weight:700;color:var(--primary);font-size:13px;text-transform:uppercase;letter-spacing:.05em">1-й этап</div><div style="font-weight:700;margin-top:4px">1 июня — 25 июля</div></div><div style="background:#fff;border-radius:10px;padding:16px"><div style="font-weight:700;color:var(--primary);font-size:13px;text-transform:uppercase;letter-spacing:.05em">2-й этап</div><div style="font-weight:700;margin-top:4px">26 июля — 10 августа</div></div><div style="background:#fff;border-radius:10px;padding:16px"><div style="font-weight:700;color:var(--primary);font-size:13px;text-transform:uppercase;letter-spacing:.05em">3-й этап</div><div style="font-weight:700;margin-top:4px">11 — 25 августа</div></div>
+      </div>
+    </div>
+    <div class="flex-center mt-32">
+      <a href="submit-documents.html" class="btn btn-primary btn-lg">Подать документы</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <img src="img/favicon.png" alt="IT COLLEGE" style="height:32px;width:auto;filter:brightness(10)">
+      </div>
+      <p>Профессиональное IT-образование в Кыргызстане. Диплом государственного образца. Бюджетные места.</p>
+      <p style="margin-top:8px;display:flex;align-items:center;gap:6px"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> г. Манас, ул. Центральная, 45</p>
+      <p style="display:flex;align-items:center;gap:6px"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> +996 507 022 202</p>
+      <p style="display:flex;align-items:center;gap:6px"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 7L2 7"/></svg> info@itcollege.kg</p>
+      <div class="footer-socials">
+        <a href="https://t.me/itcollegemanas" target="_blank" class="social-btn" title="Telegram"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M22 2 11 13M22 2 15 22l-4-9-9-4 20-7z"/></svg></a>
+        <a href="https://vk.com/itcollegemanas"  target="_blank" class="social-btn" title="VK"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M3 7h3.5c.3 2.5 1.5 7 3 7 1 0 1.5-2 1.5-4.5V7H14c-.2 4.5 1 9 3 9M17 11.5c1.5 0 2.5-1 2.5-2.5 0-1.5-1-2.5-2.5-2.5"/></svg></a>
+        <a href="https://www.youtube.com/@itcollegemanas" target="_blank" class="social-btn" title="YouTube"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M10 9l6 3-6 3V9z"/></svg></a>
+        <a href="https://wa.me/996507022202" target="_blank" class="social-btn" title="WhatsApp"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></a>
+      </div>
+    </div>
+    <div>
+      <h4>Абитуриентам</h4>
+      <ul>
+        <li><a href="abiturientam.html">Информация</a></li>
+        <li><a href="open-day.html">День открытых дверей</a></li>
+        <li><a href="priyemnaya-komissiya.html">Приёмная комиссия</a></li>
+        <li><a href="budjet-mesta.html">Бюджетные места</a></li>
+        <li><a href="stoimost.html">Стоимость обучения</a></li>
+        <li><a href="submit-documents.html">Подать документы</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Колледж</h4>
+      <ul>
+        <li><a href="spec.html">Программы обучения</a></li>
+        <li><a href="graduates-full.html">Выпускники</a></li>
+        <li><a href="blog.html">Новости</a></li>
+        <li><a href="director.html">Руководство</a></li>
+        <li><a href="otvety-na-voprosy.html">FAQ</a></li>
+        <li><a href="kontakty.html">Контакты</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Контакты</h4>
+      <ul>
+        <li><a href="tel:+996507022202">+996 507 022 202</a></li>
+        <li><a href="tel:+996755022202">+996 755 022 202</a></li>
+        <li><a href="mailto:info@itcollege.kg">info@itcollege.kg</a></li>
+        <li><a href="https://t.me/itcollegemanas" target="_blank">Telegram</a></li>
+        <li><a href="otvety-na-voprosy.html">Задать вопрос</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 IT COLLEGE — Все права защищены</span>
+    <span>Разработано IT-RUN Studio</span>
+  </div>
+</footer>
+
+<script>
+// ── Scroll + UI ──────────────────────────────────────────────────────────
+var pb  = document.getElementById('progress-bar');
+var btt = document.getElementById('btt');
+var nb  = document.querySelector('.navbar');
+window.addEventListener('scroll', function() {
+  var s = window.scrollY, h = document.documentElement.scrollHeight - window.innerHeight;
+  if (pb)  pb.style.width = (h ? s/h*100 : 0) + '%';
+  if (btt) btt.classList.toggle('visible', s > 400);
+  if (nb)  nb.classList.toggle('scrolled', s > 60);
+}, {passive:true});
+if (btt) btt.onclick = function() { window.scrollTo({top:0,behavior:'smooth'}); };
+
+// ── Mobile nav ───────────────────────────────────────────────────────────
+var toggle = document.getElementById('nav-toggle');
+var mobile = document.getElementById('nav-mobile');
+var mclose = document.getElementById('nav-mobile-close');
+if (toggle) toggle.onclick = function() { mobile.classList.add('open'); };
+if (mclose) mclose.onclick = function() { mobile.classList.remove('open'); };
+if (mobile) mobile.addEventListener('click', function(e) {
+  if (e.target === mobile) mobile.classList.remove('open');
+});
+
+// ── Scroll reveal ────────────────────────────────────────────────────────
+var io = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) {
+    if (e.isIntersecting) { e.target.classList.add('in-view'); io.unobserve(e.target); }
+  });
+}, {threshold: 0.12});
+document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(function(el) {
+  io.observe(el);
+});
+
+// ── FAQ ──────────────────────────────────────────────────────────────────
+document.querySelectorAll('.faq-q').forEach(function(q) {
+  q.onclick = function() { q.closest('.faq-item').classList.toggle('open'); };
+});
+
+// ── Lang switcher toggle ─────────────────────────────────────────────────
+var ls = document.getElementById('lang-switcher');
+var lb = document.getElementById('lang-btn');
+if (lb) lb.onclick = function(e) { e.stopPropagation(); ls.classList.toggle('open'); };
+document.addEventListener('click', function() { if (ls) ls.classList.remove('open'); });
+
+// ── Translations ─────────────────────────────────────────────────────────
+var T = {
+  ru: {
+    nav_abit:       'Абитуриентам',
+    nav_programs:   'Программы',
+    nav_students:   'Студентам',
+    nav_news:       'Новости',
+    nav_contacts:   'Контакты',
+    btn_apply:      'Поступить',
+    btn_submit:     'Подать документы',
+    btn_ebilim:     'E-bilim',
+    btn_all_news:   'Все новости →',
+    btn_all_grads:  'Все выпускники →',
+    btn_all_faq:    'Все вопросы',
+    btn_read_more:  'Читать далее →',
+    btn_programs:   'Программы →',
+    btn_contact:    'Связаться',
+    hero_badge:     'Приём 2025/2026 открыт',
+    hero_h1a:       'Начни карьеру',
+    hero_h1b:       'в IT уже сегодня',
+    hero_desc:      'IT COLLEGE — современное профессиональное образование в сфере информационных технологий. Диплом государственного образца. Бюджетные места. Трудоустройство.',
+    stat_students:  'Студентов обучаются',
+    stat_specs:     'Специальностей',
+    stat_employ:    'Трудоустройство',
+    stat_partners:  'Партнёров',
+    tag_study:      'Обучение',
+    tag_advantages: 'Преимущества',
+    tag_media:      'Медиа',
+    tag_success:    'Успех',
+    tag_faq:        'FAQ',
+    sec_programs:   'Программы обучения',
+    sec_programs_s: '6 востребованных специальностей в сфере IT',
+    sec_adv:        'IT COLLEGE — это',
+    sec_adv_s:      'Почему тысячи студентов выбирают нас',
+    sec_news:       'Новости',
+    sec_grads:      'Наши выпускники',
+    sec_grads_s:    'Они уже работают в крупнейших компаниях страны',
+    sec_faq:        'Часто задаваемые вопросы',
+    cta_title:      'Готов начать? Поступай сейчас!',
+    cta_desc:       'Приём документов открыт. Бюджетные и платные места.',
+    adv_diploma:    'Государственный диплом',
+    adv_diploma_d:  'Диплом государственного образца, признанный во всех странах СНГ',
+    adv_equip:      'Современное оборудование',
+    adv_equip_d:    'Лаборатории оснащены последними моделями компьютеров и серверов',
+    adv_intl:       'Международное партнёрство',
+    adv_intl_d:     'Обмены с вузами Германии, России и Китая',
+    adv_teach:      'Практикующие преподаватели',
+    adv_teach_d:    'Более 70% педагогов — действующие специалисты IT-отрасли',
+    adv_trophy:     'Победители олимпиад',
+    adv_trophy_d:   'Многократные призёры республиканских и международных конкурсов',
+    adv_employ:     'Трудоустройство',
+    adv_employ_d:   'Центр карьеры помогает найти работу ещё во время учёбы',
+    adv_budget:     'Бюджетные места',
+    adv_budget_d:   'Государственное финансирование для лучших абитуриентов',
+    adv_science:    'Научная деятельность',
+    adv_science_d:  'Участие в исследованиях и стартап-проектах',
+    adv_fast:       'Ускоренное обучение',
+    adv_fast_d:     'Интенсивные программы для быстрого старта карьеры',
+  },
+  ky: {
+    nav_abit:       'Абитуриенттерге',
+    nav_programs:   'Программалар',
+    nav_students:   'Студенттерге',
+    nav_news:       'Жаңылыктар',
+    nav_contacts:   'Байланыш',
+    btn_apply:      'Тапшыруу',
+    btn_submit:     'Документ тапшыруу',
+    btn_ebilim:     'E-bilim',
+    btn_all_news:   'Бардык жаңылыктар →',
+    btn_all_grads:  'Бардык бүтүрүүчүлөр →',
+    btn_all_faq:    'Бардык суроолор',
+    btn_read_more:  'Толук окуу →',
+    btn_programs:   'Программалар →',
+    btn_contact:    'Байланышуу',
+    hero_badge:     'Кабыл алуу 2025/2026 ачылды',
+    hero_h1a:       'Карьераңды баста',
+    hero_h1b:       'IT-де бүгүн эле',
+    hero_desc:      'IT COLLEGE — маалыматтык технологиялар чөйрөсүндөгү заманбап кесиптик билим берүү. Мамлекеттик диплом. Бюджеттик орундар. Жумушка орношуу.',
+    stat_students:  'Студент окуйт',
+    stat_specs:     'Адестик',
+    stat_employ:    'Жумушка орношуу',
+    stat_partners:  'Өнөктөштөр',
+    tag_study:      'Окутуу',
+    tag_advantages: 'Артыкчылыктар',
+    tag_media:      'Медиа',
+    tag_success:    'Ийгилик',
+    tag_faq:        'FAQ',
+    sec_programs:   'Окуу программалары',
+    sec_programs_s: 'IT чөйрөсүндө 6 суранычтуу адестик',
+    sec_adv:        'IT COLLEGE — бул',
+    sec_adv_s:      'Эмне үчүн миңдеген студент бизди тандайт',
+    sec_news:       'Жаңылыктар',
+    sec_grads:      'Биздин бүтүрүүчүлөр',
+    sec_grads_s:    'Алар чоң компанияларда иштешет',
+    sec_faq:        'Көп берилүүчү суроолор',
+    cta_title:      'Баштоого даярсыңбы? Азыр тапшыр!',
+    cta_desc:       'Документтерди кабыл алуу ачылды. Бюджеттик жана акылуу орундар.',
+    adv_diploma:    'Мамлекеттик диплом',
+    adv_diploma_d:  'МДА өлкөлөрүндө таанылган мамлекеттик үлгүдөгү диплом',
+    adv_equip:      'Заманбап жабдуулар',
+    adv_equip_d:    'Лабораториялар акыркы компьютерлер менен жабдылган',
+    adv_intl:       'Эл аралык өнөктөштүк',
+    adv_intl_d:     'Германия, Россия жана Кытайдын жогорку окуу жайлары менен алмашуу',
+    adv_teach:      'Тажрыйбалуу окутуучулар',
+    adv_teach_d:    'Мугалимдердин 70%дан ашыгы IT тармагынын активдүү адистери',
+    adv_trophy:     'Олимпиада жеңүүчүлөрү',
+    adv_trophy_d:   'Республикалык жана эл аралык конкурстардын кайталаган байгелүүлөрү',
+    adv_employ:     'Жумушка орношуу',
+    adv_employ_d:   'Карьера борбору окуу учурунда эле жумуш табууга жардам берет',
+    adv_budget:     'Бюджеттик орундар',
+    adv_budget_d:   'Мыкты абитуриенттер үчүн мамлекеттик каржылоо',
+    adv_science:    'Илимий иш',
+    adv_science_d:  'Изилдөөлөргө жана стартап долбоорлоруна катышуу',
+    adv_fast:       'Тездетилген окутуу',
+    adv_fast_d:     'Карьерани тез баштоо үчүн интенсивдүү программалар',
+  },
+  en: {
+    nav_abit:       'For Applicants',
+    nav_programs:   'Programs',
+    nav_students:   'For Students',
+    nav_news:       'News',
+    nav_contacts:   'Contacts',
+    btn_apply:      'Apply',
+    btn_submit:     'Submit Documents',
+    btn_ebilim:     'E-bilim',
+    btn_all_news:   'All news →',
+    btn_all_grads:  'All graduates →',
+    btn_all_faq:    'All questions',
+    btn_read_more:  'Read more →',
+    btn_programs:   'Programs →',
+    btn_contact:    'Contact us',
+    hero_badge:     'Admissions 2025/2026 open',
+    hero_h1a:       'Start your career',
+    hero_h1b:       'in IT today',
+    hero_desc:      'IT COLLEGE — modern professional education in information technology. State-recognized diploma. Budget places. Career support.',
+    stat_students:  'Students enrolled',
+    stat_specs:     'Specialties',
+    stat_employ:    'Employment rate',
+    stat_partners:  'Partners',
+    tag_study:      'Education',
+    tag_advantages: 'Advantages',
+    tag_media:      'Media',
+    tag_success:    'Success',
+    tag_faq:        'FAQ',
+    sec_programs:   'Study Programs',
+    sec_programs_s: '6 in-demand IT specialties',
+    sec_adv:        'IT COLLEGE is',
+    sec_adv_s:      'Why thousands of students choose us',
+    sec_news:       'News',
+    sec_grads:      'Our Graduates',
+    sec_grads_s:    'They already work at top companies',
+    sec_faq:        'Frequently Asked Questions',
+    cta_title:      'Ready to start? Apply now!',
+    cta_desc:       'Applications are open. Budget and paid places available.',
+    adv_diploma:    'State Diploma',
+    adv_diploma_d:  'State-recognized diploma, valid across all CIS countries',
+    adv_equip:      'Modern Equipment',
+    adv_equip_d:    'Labs equipped with the latest computers and servers',
+    adv_intl:       'International Partnership',
+    adv_intl_d:     'Exchange programs with universities in Germany, Russia and China',
+    adv_teach:      'Practicing Teachers',
+    adv_teach_d:    'Over 70% of instructors are active IT industry professionals',
+    adv_trophy:     'Olympiad Winners',
+    adv_trophy_d:   'Multiple prize-winners of national and international competitions',
+    adv_employ:     'Employment',
+    adv_employ_d:   'Career center helps find jobs even during studies',
+    adv_budget:     'Budget Places',
+    adv_budget_d:   'State funding for the best applicants',
+    adv_science:    'Research',
+    adv_science_d:  'Participation in research projects and startups',
+    adv_fast:       'Accelerated Learning',
+    adv_fast_d:     'Intensive programs for a fast career start',
+  }
+};
+
+var FLAGS = { ru: '🇷🇺', ky: '🇰🇬', en: '🇬🇧' };
+var CODES = { ru: 'RU', ky: 'KY', en: 'EN' };
+
+function setLang(lang) {
+  // Update switcher UI
+  var flagEl = document.getElementById('lang-flag');
+  var codeEl = document.getElementById('lang-code');
+  if (flagEl) flagEl.textContent = FLAGS[lang];
+  if (codeEl) codeEl.textContent = CODES[lang];
+  document.querySelectorAll('.lang-option').forEach(function(o) {
+    o.classList.toggle('active', o.dataset.lang === lang);
+  });
+  if (ls) ls.classList.remove('open');
+
+  // Animate: fade out main content
+  var sections = document.querySelectorAll('section, .page-header, .quick-bar, footer');
+  sections.forEach(function(s) { s.classList.add('lang-fade'); });
+
+  setTimeout(function() {
+    // Apply translations
+    var dict = T[lang] || T.ru;
+    document.querySelectorAll('[data-i18n]').forEach(function(el) {
+      var key = el.getAttribute('data-i18n');
+      if (dict[key] !== undefined) el.textContent = dict[key];
+    });
+    // Fade in
+    sections.forEach(function(s) {
+      s.classList.remove('lang-fade');
+      s.classList.add('lang-fade-in');
+      setTimeout(function() { s.classList.remove('lang-fade-in'); }, 400);
+    });
+    // Save
+    try { localStorage.setItem('itcollege_lang', lang); } catch(e){}
+  }, 250);
+}
+
+// Restore saved language
+(function() {
+  try {
+    var saved = localStorage.getItem('itcollege_lang');
+    if (saved && saved !== 'ru' && T[saved]) setLang(saved);
+  } catch(e) {}
+})();
+</script>
+
+</body>
+</html>
