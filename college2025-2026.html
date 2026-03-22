@@ -25,29 +25,10 @@
               <a href="#" class="nav-link" data-i18n="nav_students">Студентам <span class="arrow">▾</span></a>
               <div class="nav-dropdown"><a href="graduates-full.html">Выпускники</a><a href="blog.html">Новости</a><a href="director.html">Директор</a><a href="kontakty.html">Контакты</a><a href="otvety-na-voprosy.html">Вопросы и ответы</a></div>
             </div><div class="nav-item"><a href="blog.html" class="nav-link" data-i18n="nav_news">Новости</a></div><div class="nav-item"><a href="kontakty.html" class="nav-link" data-i18n="nav_contacts">Контакты</a></div></div>
-    <div class="lang-switcher" id="lang-switcher">
-      <button class="lang-btn" id="lang-btn" aria-label="Язык">
-        <span class="lang-flag" id="lang-flag">🇷🇺</span>
-        <span class="lang-code" id="lang-code">RU</span>
-        <span class="lang-arrow">▾</span>
-      </button>
-      <div class="lang-dropdown" id="lang-dropdown">
-        <button class="lang-option active" data-lang="ru" onclick="setLang('ru')">
-          <span class="lang-flag">🇷🇺</span>
-          <span class="lang-name">Русский</span>
-          <span class="lang-check">✓</span>
-        </button>
-        <button class="lang-option" data-lang="ky" onclick="setLang('ky')">
-          <span class="lang-flag">🇰🇬</span>
-          <span class="lang-name">Кыргызча</span>
-          <span class="lang-check">✓</span>
-        </button>
-        <button class="lang-option" data-lang="en" onclick="setLang('en')">
-          <span class="lang-flag">🇬🇧</span>
-          <span class="lang-name">English</span>
-          <span class="lang-check">✓</span>
-        </button>
-      </div>
+        <div class="lang-switcher">
+      <button class="lang-btn active" data-lang="ru" onclick="setLang('ru')">RU</button>
+      <button class="lang-btn" data-lang="ky" onclick="setLang('ky')">KY</button>
+      <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
     </div>
     <div class="nav-btns">
       <a href="submit-documents.html" class="btn btn-primary btn-sm" data-i18n="btn_apply">Поступить</a>
@@ -224,11 +205,6 @@ document.querySelectorAll('.faq-q').forEach(function(q) {
   q.onclick = function() { q.closest('.faq-item').classList.toggle('open'); };
 });
 
-// ── Lang switcher toggle ─────────────────────────────────────────────────
-var ls = document.getElementById('lang-switcher');
-var lb = document.getElementById('lang-btn');
-if (lb) lb.onclick = function(e) { e.stopPropagation(); ls.classList.toggle('open'); };
-document.addEventListener('click', function() { if (ls) ls.classList.remove('open'); });
 
 // ── Translations ─────────────────────────────────────────────────────────
 var T = {

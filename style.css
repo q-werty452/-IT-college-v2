@@ -1985,7 +1985,8 @@ button {
     filter    .6s  ease;
 }
 
-.reveal.in-view {
+.reveal.in-view,
+.reveal.revealed {
   opacity: 1;
   transform: translateY(0);
   filter: blur(0);
@@ -2011,8 +2012,8 @@ button {
     filter    .6s  ease;
 }
 
-.reveal-left.in-view,
-.reveal-right.in-view {
+.reveal-left.in-view, .reveal-left.revealed,
+.reveal-right.in-view, .reveal-right.revealed {
   opacity: 1;
   transform: translateX(0);
   filter: blur(0);
