@@ -76,14 +76,7 @@
       </div>
     </div>
     <div class="hero-visual">
-      <div class="hero-card">
-        <div style="margin-bottom:12px;color:rgba(255,255,255,.9)"><svg viewBox="0 0 24 24" width="52" height="52" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
-        <div style="font-size:20px;font-weight:800;margin-bottom:4px">IT COLLEGE</div>
-        <div style="font-size:13px;opacity:.75;margin-bottom:20px">г. Манас, Кыргызстан</div>
-        <div class="hero-stats">
-          <div class="hero-stat"><div class="hero-stat-num">500+</div><div class="hero-stat-label">Студентов обучаются</div></div><div class="hero-stat"><div class="hero-stat-num">6</div><div class="hero-stat-label">Специальностей</div></div><div class="hero-stat"><div class="hero-stat-num">85%</div><div class="hero-stat-label">Трудоустройство</div></div><div class="hero-stat"><div class="hero-stat-num">10+</div><div class="hero-stat-label">Партнёров</div></div>
-        </div>
-      </div>
+      
     </div>
   </div>
 </section>
@@ -369,6 +362,7 @@
 </section>
 
 <section class="steps-section" id="admission">
+  <canvas class="steps-canvas" id="steps-canvas"></canvas>
   <div class="container">
     <div class="section-header">
       <div class="tag">Поступление</div>
@@ -450,7 +444,7 @@
         </div>
         <div class="npa-body">
           <div class="npa-docs">
-            <div class="npa-doc" data-pdf="docs/ustav-itcollege-2024.pdf">
+            <div class="npa-doc" data-pdf="docs/qwerty.docs">
               <span class="npa-doc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
               <span class="npa-doc-name">Устав IT COLLEGE (актуальная редакция 2024)</span>
               <span class="npa-doc-open">Открыть</span>
@@ -1074,6 +1068,98 @@ document.querySelectorAll('.npa-doc').forEach(function(doc) {
   track.appendChild(clone);
 })();
 
+
+// ── Steps section particles ───────────────────────────────────────────────
+(function() {
+  var canvas = document.getElementById('steps-canvas');
+  if (!canvas) return;
+  var ctx = canvas.getContext('2d');
+  var mouse = { x: -9999, y: -9999 };
+  var particles = [];
+  var COUNT = 80;
+
+  function resize() {
+    canvas.width  = canvas.offsetWidth;
+    canvas.height = canvas.offsetHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  var section = canvas.closest('.steps-section');
+  section.addEventListener('mousemove', function(e) {
+    var r = section.getBoundingClientRect();
+    mouse.x = e.clientX - r.left;
+    mouse.y = e.clientY - r.top;
+  });
+  section.addEventListener('mouseleave', function() {
+    mouse.x = -9999; mouse.y = -9999;
+  });
+
+  for (var i = 0; i < COUNT; i++) {
+    particles.push({
+      x:  Math.random() * canvas.width,
+      y:  Math.random() * canvas.height,
+      vx: (Math.random() - 0.5) * 0.4,
+      vy: (Math.random() - 0.5) * 0.4,
+      r:  Math.random() * 2.5 + 1,
+      alpha: Math.random() * 0.5 + 0.15
+    });
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    particles.forEach(function(p) {
+      // cursor repulsion
+      var dx = p.x - mouse.x;
+      var dy = p.y - mouse.y;
+      var dist = Math.sqrt(dx * dx + dy * dy);
+      if (dist < 120) {
+        var force = (120 - dist) / 120;
+        p.vx += (dx / dist) * force * 0.6;
+        p.vy += (dy / dist) * force * 0.6;
+      }
+
+      // friction + move
+      p.vx *= 0.97;
+      p.vy *= 0.97;
+      p.x  += p.vx;
+      p.y  += p.vy;
+
+      // wrap edges
+      if (p.x < 0) p.x = canvas.width;
+      if (p.x > canvas.width)  p.x = 0;
+      if (p.y < 0) p.y = canvas.height;
+      if (p.y > canvas.height) p.y = 0;
+
+      // draw particle
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(255,255,255,' + p.alpha + ')';
+      ctx.fill();
+    });
+
+    // draw lines between close particles
+    for (var i = 0; i < particles.length; i++) {
+      for (var j = i + 1; j < particles.length; j++) {
+        var a = particles[i], b = particles[j];
+        var dx = a.x - b.x, dy = a.y - b.y;
+        var d = Math.sqrt(dx*dx + dy*dy);
+        if (d < 100) {
+          ctx.beginPath();
+          ctx.moveTo(a.x, a.y);
+          ctx.lineTo(b.x, b.y);
+          ctx.strokeStyle = 'rgba(255,255,255,' + (0.12 * (1 - d/100)) + ')';
+          ctx.lineWidth = 0.8;
+          ctx.stroke();
+        }
+      }
+    }
+
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
 
 // ── Translations ─────────────────────────────────────────────────────────
 var T = {
