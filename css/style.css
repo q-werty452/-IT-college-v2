@@ -2998,25 +2998,43 @@ button:focus-visible, a:focus-visible {
 /* ===================== СЛАЙДЕР НОВОСТЕЙ В ГЕРОЕ ===================== */
 
 .hero-slider {
-  background: rgba(6, 18, 52, 0.82);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(255,255,255,.18);
-  border-radius: 24px;
-  padding: 40px;
+  background: #0f172a;
+  border-radius: 20px;
   width: 100%;
-  min-height: 340px;
+  min-height: 360px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   overflow: hidden;
   position: relative;
-  box-shadow: 0 32px 80px rgba(0,0,0,.5), inset 0 1px 0 rgba(255,255,255,.1);
+  box-shadow: 0 32px 80px rgba(0,0,0,.6);
   animation: fadeUp .8s .4s both;
+}
+
+/* Цветная полоса сверху — меняется JS-ом через data-cat */
+.hero-slider::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: var(--slider-accent, var(--primary));
+  transition: background .4s ease;
+  z-index: 2;
+}
+
+/* Прогресс-полоса автопрокрутки */
+.hero-slider-progress {
+  position: absolute;
+  top: 0; left: 0;
+  height: 4px;
+  background: rgba(255,255,255,.35);
+  width: 0%;
+  z-index: 3;
+  transition: width linear;
 }
 
 .hero-slider-track {
   display: flex;
+  flex: 1;
   transition: transform .5s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -3024,36 +3042,39 @@ button:focus-visible, a:focus-visible {
   min-width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 16px;
+  padding: 36px 32px 28px;
 }
 
 .hero-slide-cat {
   display: inline-flex;
   align-items: center;
+  gap: 6px;
   font-size: 11px;
   font-weight: 800;
-  letter-spacing: .1em;
+  letter-spacing: .12em;
   text-transform: uppercase;
-  padding: 4px 12px;
+  padding: 5px 14px;
   border-radius: 100px;
   width: fit-content;
 }
-.hero-slide-cat--news     { background: rgba(59,130,246,.25);  color: #93c5fd; }
-.hero-slide-cat--contest  { background: rgba(245,158,11,.25);  color: #fcd34d; }
-.hero-slide-cat--announce { background: rgba(16,185,129,.25);  color: #6ee7b7; }
-.hero-slide-cat--congrats { background: rgba(168,85,247,.25);  color: #d8b4fe; }
+.hero-slide-cat--news     { background: #1e3a5f; color: #60a5fa; }
+.hero-slide-cat--contest  { background: #3d2c00; color: #fbbf24; }
+.hero-slide-cat--announce { background: #0d3326; color: #34d399; }
+.hero-slide-cat--congrats { background: #2d1b4e; color: #c084fc; }
 
 .hero-slide-title {
-  font-size: clamp(15px, 1.4vw, 18px);
+  font-size: clamp(16px, 1.5vw, 20px);
   font-weight: 800;
   color: #fff;
-  line-height: 1.35;
+  line-height: 1.3;
+  letter-spacing: -.01em;
 }
 
 .hero-slide-text {
   font-size: 14px;
-  color: rgba(255,255,255,.65);
-  line-height: 1.65;
+  color: rgba(255,255,255,.55);
+  line-height: 1.7;
   flex: 1;
 }
 
@@ -3061,14 +3082,14 @@ button:focus-visible, a:focus-visible {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 4px;
-  padding-top: 16px;
-  border-top: 1px solid rgba(255,255,255,.1);
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,.08);
+  margin-top: auto;
 }
 
 .hero-slide-date {
   font-size: 12px;
-  color: rgba(255,255,255,.4);
+  color: rgba(255,255,255,.3);
   display: flex;
   align-items: center;
   gap: 5px;
@@ -3077,47 +3098,58 @@ button:focus-visible, a:focus-visible {
 .hero-slide-link {
   font-size: 13px;
   font-weight: 700;
-  color: #93c5fd;
+  color: #60a5fa;
   text-decoration: none;
-  transition: color .2s, gap .2s;
   display: inline-flex;
   align-items: center;
   gap: 4px;
+  padding: 6px 16px;
+  border-radius: 8px;
+  background: rgba(96,165,250,.1);
+  border: 1px solid rgba(96,165,250,.2);
+  transition: background .2s, color .2s, border-color .2s;
 }
-.hero-slide-link:hover { color: #fff; }
+.hero-slide-link:hover {
+  background: rgba(96,165,250,.2);
+  border-color: rgba(96,165,250,.4);
+  color: #fff;
+}
 
+/* Нижняя панель навигации */
 .hero-slider-nav {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 12px;
-  margin-top: 24px;
+  justify-content: space-between;
+  padding: 14px 32px;
+  background: rgba(255,255,255,.04);
+  border-top: 1px solid rgba(255,255,255,.07);
 }
 
-.hero-slider-btn {
-  width: 32px; height: 32px;
-  border-radius: 50%;
-  background: rgba(255,255,255,.1);
-  border: 1px solid rgba(255,255,255,.2);
-  color: #fff;
-  cursor: pointer;
-  display: flex; align-items: center; justify-content: center;
-  transition: background .2s, border-color .2s;
-  flex-shrink: 0;
-}
-.hero-slider-btn:hover { background: rgba(255,255,255,.22); border-color: rgba(255,255,255,.4); }
-
-.hero-slider-dots { display: flex; gap: 7px; align-items: center; }
+.hero-slider-dots { display: flex; gap: 6px; align-items: center; }
 
 .hero-slider-dot {
-  width: 7px; height: 7px;
-  border-radius: 50%;
-  background: rgba(255,255,255,.28);
-  cursor: pointer;
-  transition: background .25s, transform .25s, width .25s;
+  height: 4px;
+  width: 20px;
   border-radius: 4px;
+  background: rgba(255,255,255,.2);
+  cursor: pointer;
+  transition: background .25s, width .3s;
 }
 .hero-slider-dot.active {
   background: #fff;
-  width: 20px;
+  width: 32px;
 }
+
+.hero-slider-btns { display: flex; gap: 8px; }
+
+.hero-slider-btn {
+  width: 34px; height: 34px;
+  border-radius: 10px;
+  background: rgba(255,255,255,.07);
+  border: 1px solid rgba(255,255,255,.12);
+  color: rgba(255,255,255,.7);
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: background .2s, color .2s;
+}
+.hero-slider-btn:hover { background: rgba(255,255,255,.15); color: #fff; }

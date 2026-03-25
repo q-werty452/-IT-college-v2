@@ -465,16 +465,26 @@ function setLang(lang) {
 
 // ── Слайдер новостей в герое ─────────────────────────────────────────────
 (function() {
-  var slider = document.getElementById('hero-slider');
+  var slider   = document.getElementById('hero-slider');
   if (!slider) return;
-  var track  = document.getElementById('hero-slider-track');
-  var dotsCt = document.getElementById('hero-slider-dots');
-  var prevBtn = document.getElementById('hero-slider-prev');
-  var nextBtn = document.getElementById('hero-slider-next');
-  var slides  = track.querySelectorAll('.hero-slide');
-  var total   = slides.length;
-  var current = 0;
-  var timer;
+  var track    = document.getElementById('hero-slider-track');
+  var dotsCt   = document.getElementById('hero-slider-dots');
+  var prevBtn  = document.getElementById('hero-slider-prev');
+  var nextBtn  = document.getElementById('hero-slider-next');
+  var progress = document.getElementById('hero-slider-progress');
+  var slides   = track.querySelectorAll('.hero-slide');
+  var total    = slides.length;
+  var current  = 0;
+  var timer, progTimer;
+  var DELAY    = 4500;
+
+  // Цвета акцента по категории
+  var catColors = {
+    'hero-slide-cat--news':     '#3b82f6',
+    'hero-slide-cat--contest':  '#f59e0b',
+    'hero-slide-cat--announce': '#10b981',
+    'hero-slide-cat--congrats': '#a855f7'
+  };
 
   // Создаём точки-индикаторы
   for (var i = 0; i < total; i++) {
@@ -484,16 +494,39 @@ function setLang(lang) {
     dotsCt.appendChild(dot);
   }
 
+  function updateAccent() {
+    var cat = slides[current].querySelector('.hero-slide-cat');
+    if (!cat) return;
+    var color = '#3b82f6';
+    Object.keys(catColors).forEach(function(cls) {
+      if (cat.classList.contains(cls)) color = catColors[cls];
+    });
+    slider.style.setProperty('--slider-accent', color);
+    if (progress) progress.style.background = color.replace(')', ', .5)').replace('rgb', 'rgba');
+  }
+
+  function startProgress() {
+    if (!progress) return;
+    progress.style.transition = 'none';
+    progress.style.width = '0%';
+    setTimeout(function() {
+      progress.style.transition = 'width ' + DELAY + 'ms linear';
+      progress.style.width = '100%';
+    }, 30);
+  }
+
   function goTo(index) {
     current = (index + total) % total;
     track.style.transform = 'translateX(-' + (current * 100) + '%)';
     dotsCt.querySelectorAll('.hero-slider-dot').forEach(function(d, i) {
       d.classList.toggle('active', i === current);
     });
+    updateAccent();
+    startProgress();
   }
 
-  function startAuto() { timer = setInterval(function() { goTo(current + 1); }, 4500); }
-  function stopAuto()  { clearInterval(timer); }
+  function startAuto() { timer = setInterval(function() { goTo(current + 1); }, DELAY); }
+  function stopAuto()  { clearInterval(timer); if (progress) { progress.style.transition = 'none'; progress.style.width = '0%'; } }
 
   prevBtn.onclick = function() { stopAuto(); goTo(current - 1); startAuto(); };
   nextBtn.onclick = function() { stopAuto(); goTo(current + 1); startAuto(); };
@@ -506,5 +539,6 @@ function setLang(lang) {
   slider.addEventListener('mouseenter', stopAuto);
   slider.addEventListener('mouseleave', startAuto);
 
+  goTo(0);
   startAuto();
 })();
