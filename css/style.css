@@ -1733,7 +1733,7 @@ button:focus-visible, a:focus-visible {
   max-width: 1280px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
+  grid-template-columns: 1fr 1fr;
   gap: 64px;
   align-items: center;
   position: relative;
@@ -3001,7 +3001,7 @@ button:focus-visible, a:focus-visible {
   background: #0f172a;
   border-radius: 20px;
   width: 100%;
-  min-height: 360px;
+  min-height: 460px;
   display: flex;
   flex-direction: column;
   overflow: hidden;
