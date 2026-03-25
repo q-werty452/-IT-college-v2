@@ -1074,18 +1074,33 @@ document.querySelectorAll('.npa-doc').forEach(function(doc) {
   var canvas = document.getElementById('steps-canvas');
   if (!canvas) return;
   var ctx = canvas.getContext('2d');
+  var section = canvas.closest('.steps-section');
   var mouse = { x: -9999, y: -9999 };
   var particles = [];
   var COUNT = 80;
+  var animRunning = false;
 
   function resize() {
-    canvas.width  = canvas.offsetWidth;
-    canvas.height = canvas.offsetHeight;
+    canvas.width  = section.offsetWidth;
+    canvas.height = section.offsetHeight;
   }
-  resize();
-  window.addEventListener('resize', resize);
 
-  var section = canvas.closest('.steps-section');
+  function initParticles() {
+    particles = [];
+    for (var i = 0; i < COUNT; i++) {
+      particles.push({
+        x:  Math.random() * canvas.width,
+        y:  Math.random() * canvas.height,
+        vx: (Math.random() - 0.5) * 0.4,
+        vy: (Math.random() - 0.5) * 0.4,
+        r:  Math.random() * 2 + 1,
+        alpha: Math.random() * 0.45 + 0.15
+      });
+    }
+  }
+
+  window.addEventListener('resize', function() { resize(); initParticles(); });
+
   section.addEventListener('mousemove', function(e) {
     var r = section.getBoundingClientRect();
     mouse.x = e.clientX - r.left;
@@ -1095,70 +1110,54 @@ document.querySelectorAll('.npa-doc').forEach(function(doc) {
     mouse.x = -9999; mouse.y = -9999;
   });
 
-  for (var i = 0; i < COUNT; i++) {
-    particles.push({
-      x:  Math.random() * canvas.width,
-      y:  Math.random() * canvas.height,
-      vx: (Math.random() - 0.5) * 0.4,
-      vy: (Math.random() - 0.5) * 0.4,
-      r:  Math.random() * 2.5 + 1,
-      alpha: Math.random() * 0.5 + 0.15
-    });
-  }
-
   function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+    var W = canvas.width, H = canvas.height;
 
-    particles.forEach(function(p) {
-      // cursor repulsion
-      var dx = p.x - mouse.x;
-      var dy = p.y - mouse.y;
-      var dist = Math.sqrt(dx * dx + dy * dy);
-      if (dist < 120) {
-        var force = (120 - dist) / 120;
-        p.vx += (dx / dist) * force * 0.6;
-        p.vy += (dy / dist) * force * 0.6;
+    for (var i = 0; i < particles.length; i++) {
+      var p = particles[i];
+      var dx = p.x - mouse.x, dy = p.y - mouse.y;
+      var dist = Math.sqrt(dx*dx + dy*dy);
+      if (dist < 130 && dist > 0) {
+        var force = (130 - dist) / 130;
+        p.vx += (dx / dist) * force * 0.5;
+        p.vy += (dy / dist) * force * 0.5;
       }
+      p.vx *= 0.97; p.vy *= 0.97;
+      p.x += p.vx;  p.y += p.vy;
+      if (p.x < 0) p.x = W; if (p.x > W) p.x = 0;
+      if (p.y < 0) p.y = H; if (p.y > H) p.y = 0;
 
-      // friction + move
-      p.vx *= 0.97;
-      p.vy *= 0.97;
-      p.x  += p.vx;
-      p.y  += p.vy;
-
-      // wrap edges
-      if (p.x < 0) p.x = canvas.width;
-      if (p.x > canvas.width)  p.x = 0;
-      if (p.y < 0) p.y = canvas.height;
-      if (p.y > canvas.height) p.y = 0;
-
-      // draw particle
       ctx.beginPath();
       ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
       ctx.fillStyle = 'rgba(255,255,255,' + p.alpha + ')';
       ctx.fill();
-    });
+    }
 
-    // draw lines between close particles
     for (var i = 0; i < particles.length; i++) {
       for (var j = i + 1; j < particles.length; j++) {
         var a = particles[i], b = particles[j];
-        var dx = a.x - b.x, dy = a.y - b.y;
-        var d = Math.sqrt(dx*dx + dy*dy);
-        if (d < 100) {
+        var ddx = a.x - b.x, ddy = a.y - b.y;
+        var d = Math.sqrt(ddx*ddx + ddy*ddy);
+        if (d < 110) {
           ctx.beginPath();
           ctx.moveTo(a.x, a.y);
           ctx.lineTo(b.x, b.y);
-          ctx.strokeStyle = 'rgba(255,255,255,' + (0.12 * (1 - d/100)) + ')';
-          ctx.lineWidth = 0.8;
+          ctx.strokeStyle = 'rgba(255,255,255,' + (0.15 * (1 - d/110)) + ')';
+          ctx.lineWidth = 0.7;
           ctx.stroke();
         }
       }
     }
-
     requestAnimationFrame(draw);
   }
-  draw();
+
+  // init after page load so section has correct height
+  window.addEventListener('load', function() {
+    resize();
+    initParticles();
+    if (!animRunning) { animRunning = true; draw(); }
+  });
 })();
 
 // ── Translations ─────────────────────────────────────────────────────────
