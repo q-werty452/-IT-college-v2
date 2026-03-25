@@ -442,9 +442,10 @@ button {
 
 /* ===================== HERO ===================== */
 .hero {
-  background: var(--dark);
+  background: linear-gradient(135deg, rgba(6,12,29,.82) 0%, rgba(15,23,42,.75) 100%),
+              url(https://itrun.kg/static/imgs/background.jpeg) center/cover no-repeat;
   color: #fff;
-  padding: 90px 24px 110px;
+  padding: 100px 24px 120px;
   position: relative;
   overflow: hidden;
   animation: heroFadeIn 1.2s cubic-bezier(0.22, 1, 0.36, 1) both;
@@ -454,7 +455,7 @@ button {
   from { opacity: 0; transform: translateY(30px); }
   to   { opacity: 1; transform: translateY(0); }
 }
-
+/* 
 .hero::before {
   content: '';
   position: absolute;
@@ -476,7 +477,7 @@ button {
     radial-gradient(ellipse 50% 30% at 80% 90%, rgba(37, 99, 235, .2)  0%, transparent 55%);
   animation: auroraShift 16s ease-in-out infinite alternate-reverse;
   pointer-events: none;
-}
+} */
 
 @keyframes auroraShift {
   0%   { transform: scale(1)    rotate(0deg);  opacity: .8; }
@@ -499,11 +500,12 @@ button {
   max-width: 1280px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 48px;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 64px;
   align-items: center;
   position: relative;
 }
+.hero-content { max-width: 600px; }
 
 .hero-badge {
   display: inline-flex;
@@ -542,22 +544,28 @@ button {
 }
 
 .hero h1 {
-  font-size: clamp(32px, 5vw, 58px);
-  font-weight: 800;
-  line-height: 1.1;
-  margin-bottom: 20px;
+  font-size: clamp(36px, 5.5vw, 66px);
+  font-weight: 900;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  margin-bottom: 22px;
+  text-shadow: 0 2px 24px rgba(0,0,0,.4);
   animation: fadeUp .8s .35s both;
 }
-
-.hero h1 span {
+.hero h1 span { color: #fff; }
+.hero h1 em {
+  font-style: normal;
   color: #fbbf24;
+  position: relative;
 }
 
 .hero p {
   font-size: clamp(15px, 2vw, 17px);
-  opacity: .85;
+  opacity: .88;
   margin-bottom: 32px;
-  max-width: 480px;
+  max-width: 500px;
+  line-height: 1.75;
+  text-shadow: 0 1px 8px rgba(0,0,0,.3);
   animation: fadeUp .8s .5s both;
 }
 
@@ -567,12 +575,83 @@ button {
   gap: 12px;
   animation: fadeUp .8s .65s both;
 }
+.hero-btn-ghost {
+  color: #fff !important;
+  border-color: rgba(255,255,255,.45) !important;
+  backdrop-filter: blur(6px);
+}
+.hero-btn-ghost:hover {
+  background: rgba(255,255,255,.12) !important;
+  border-color: rgba(255,255,255,.75) !important;
+}
+.hero-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 28px;
+  animation: fadeUp .8s .8s both;
+}
+.hero-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255,255,255,.85);
+  background: rgba(255,255,255,.1);
+  border: 1px solid rgba(255,255,255,.18);
+  backdrop-filter: blur(8px);
+  padding: 6px 14px;
+  border-radius: 100px;
+}
+.hero-pill svg { color: #4ade80; flex-shrink: 0; }
 
 .hero-visual {
   position: relative;
   display: flex;
   justify-content: center;
-  animation: fadeUp .8s .3s both;
+  align-items: center;
+  animation: fadeUp .8s .4s both;
+}
+.hero-float-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  width: 100%;
+}
+.hero-fstat {
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.14);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 20px;
+  padding: 28px 24px;
+  text-align: center;
+  transition: transform .3s ease, background .3s ease;
+}
+.hero-fstat:hover {
+  transform: translateY(-4px);
+  background: rgba(255,255,255,.13);
+}
+.hero-fstat--accent {
+  background: rgba(29,78,216,.35);
+  border-color: rgba(59,130,246,.4);
+}
+.hero-fstat-num {
+  font-size: clamp(28px, 3.5vw, 40px);
+  font-weight: 900;
+  color: #fff;
+  line-height: 1;
+  margin-bottom: 6px;
+  letter-spacing: -0.02em;
+}
+.hero-fstat-num span { color: #fbbf24; font-size: .75em; }
+.hero-fstat-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255,255,255,.65);
+  text-transform: uppercase;
+  letter-spacing: .06em;
 }
 
 .hero-card {
@@ -1119,7 +1198,7 @@ button {
 .about-list-text p { font-size: 0.88rem; color: var(--gray); }
 .about-visual { position: relative; }
 .about-card {
-  background: linear-gradient(135deg, var(--dark-2) 0%, var(--primary) 100%);
+  background: linear-gradient(135deg, #253457 0%, var(--primary) 100%);
   border-radius: 20px;
   padding: 40px;
   color: #fff;
@@ -1192,7 +1271,7 @@ button {
 
 /* ─── Steps/Admission section ─── */
 .steps-section {
-  background: var(--primary);
+  background: #34477c;
   padding: 96px 24px;
   position: relative;
   overflow: hidden;
