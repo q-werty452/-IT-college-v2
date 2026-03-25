@@ -122,7 +122,7 @@ document.querySelectorAll('.npa-doc').forEach(function(doc) {
     var pdfSrc = doc.getAttribute('data-pdf');
     if (!pdfSrc) return;
     if (!pdfSrc.startsWith('http')) {
-      var base = 'https://q-werty452.github.io/-IT-college-v2/';
+      var base = 'https://q-werty452.github.io/IT-college-v2/';
       pdfSrc = 'https://docs.google.com/viewer?url=' + base + pdfSrc + '&embedded=true';
     }
     var viewer = doc.nextElementSibling;
