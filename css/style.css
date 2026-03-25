@@ -2540,7 +2540,7 @@ button:focus-visible, a:focus-visible {
 
 /* Page hero */
 .page-hero {
-  background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+  background: linear-gradient(135deg, #0B5394 0%, #061f42 100%);
   padding: 64px 0 56px;
   position: relative;
   overflow: hidden;
@@ -2551,7 +2551,7 @@ button:focus-visible, a:focus-visible {
   top: -80px; right: -80px;
   width: 280px; height: 280px;
   border-radius: 50%;
-  background: rgba(255,255,255,.06);
+  background: rgba(23,168,206,0.1);
   pointer-events: none;
 }
 .page-hero h1 {
@@ -2560,7 +2560,7 @@ button:focus-visible, a:focus-visible {
   margin-bottom: 10px;
 }
 .page-hero p {
-  color: rgba(255,255,255,.75);
+  color: rgba(255,255,255,.72);
   font-size: 1rem;
   max-width: 540px;
 }
