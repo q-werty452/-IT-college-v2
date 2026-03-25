@@ -9,45 +9,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <style>
-    /* ── Page Hero ── */
-    .page-hero {
-      background: linear-gradient(135deg, var(--dark) 0%, #1a3a8a 55%, #0ea5e9 100%);
-      color: #fff;
-      padding: 72px 24px 80px;
-      position: relative;
-      overflow: hidden;
-      animation: heroFadeIn .8s ease both;
-    }
-    @keyframes heroFadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-    .page-hero::before {
-      content: '';
-      position: absolute; inset: 0;
-      background:
-        radial-gradient(ellipse 55% 60% at 85% 40%, rgba(14,165,233,.3) 0%, transparent 70%),
-        radial-gradient(ellipse 35% 40% at 10% 80%, rgba(245,158,11,.1) 0%, transparent 60%);
-      pointer-events: none;
-    }
-    .page-hero-dots {
-      position: absolute; inset: 0; pointer-events: none;
-      background-image: radial-gradient(rgba(255,255,255,.09) 1px, transparent 1px);
-      background-size: 28px 28px;
-    }
-    .page-hero-inner { position: relative; max-width: 1280px; margin: 0 auto; }
-    .breadcrumb {
-      display: flex; align-items: center; gap: 6px;
-      font-size: 13px; opacity: .72; margin-bottom: 20px; flex-wrap: wrap;
-      justify-content: flex-start;
-    }
-    .breadcrumb a { color: rgba(255,255,255,.8); transition: color .2s; }
-    .breadcrumb a:hover { color: #fff; }
-    .breadcrumb-sep { opacity: .5; }
-    .breadcrumb-active { color: #fff; font-weight: 600; }
-    .page-hero h1 { font-size: clamp(28px,4.5vw,52px); font-weight: 800; line-height:1.1; margin-bottom: 14px; }
-    .page-hero h1 span { color: #fbbf24; }
-    .page-hero p { font-size: clamp(14px,1.8vw,17px); opacity: .82; max-width: 520px; }
 
     /* ── Contacts Grid ── */
     .contacts-grid {
@@ -324,14 +285,13 @@
 
   <!-- ═══════════════ PAGE HERO ═══════════════ -->
   <section class="page-hero">
-    <div class="page-hero-dots"></div>
-    <div class="page-hero-inner">
+    <div class="container">
       <nav class="breadcrumb">
-        <a href="index.html">Главная</a>
+        <a href="index.html" class="breadcrumb-item">Главная</a>
         <span class="breadcrumb-sep">›</span>
-        <span class="breadcrumb-active">Контакты</span>
+        <span class="breadcrumb-item active">Контакты</span>
       </nav>
-      <h1>Контакты <span>IT COLLEGE</span></h1>
+      <h1>Контакты IT COLLEGE</h1>
       <p>Мы всегда готовы ответить на ваши вопросы — пишите, звоните или приходите</p>
     </div>
   </section>
