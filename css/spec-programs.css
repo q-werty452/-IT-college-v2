@@ -444,6 +444,15 @@
   .pgm-wrap .cta-btns { flex-direction: column; align-items: center; }
   .pgm-wrap .cta-btns .btn { width: 100%; max-width: 300px; justify-content: center; }
 }
+@media (max-width: 640px) {
+  .pgm-wrap .page-hero { padding: 56px 16px 48px; }
+  .pgm-wrap .page-hero h1 { font-size: clamp(1.5rem, 6vw, 2rem); }
+  .pgm-wrap .section { padding: 40px 0; }
+  .pgm-wrap .search-bar { max-width: 100%; }
+  .pgm-wrap .filter-bar { gap: 6px; }
+  .pgm-wrap .filter-btn { font-size: 12px; padding: 6px 12px; }
+  .pgm-wrap .program-card { padding: 20px; }
+}
 
 /* ============================================================
    NEWS PAGE STYLES
@@ -544,4 +553,8 @@
 }
 @media (max-width: 768px) {
   .pgm-wrap .news-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .pgm-wrap .news-grid { gap: 16px; }
+  .pgm-wrap .news-card { border-radius: 12px; }
 }

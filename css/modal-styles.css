@@ -275,6 +275,15 @@
 .modal-news-text p:last-child { margin-bottom: 0; }
 
 /* ── Responsive ───────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .modal-box { max-width: 92vw; }
+  .modal-gallery { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 768px) {
+  .modal-box { max-width: 96vw; max-height: 92vh; }
+  .modal-gallery { grid-template-columns: repeat(2, 1fr); }
+  .modal-news-banner { height: 200px; }
+}
 @media (max-width: 600px) {
   .modal-overlay { padding: 12px; }
   .modal-box { border-radius: 18px; max-height: 95vh; }
@@ -284,4 +293,5 @@
   .modal-news-banner { height: 160px; }
   .modal-news-htitle { font-size: 1rem; }
   .modal-gallery-item { height: 80px; }
+  .modal-gallery { grid-template-columns: repeat(2, 1fr); }
 }
