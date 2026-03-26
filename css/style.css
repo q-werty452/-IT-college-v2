@@ -2893,7 +2893,7 @@ button:focus-visible, a:focus-visible {
   /* Показываем мобильный баннер после quick-bar */
   .hero-banner-mobile {
     display: block;
-    padding: 16px var(--container-pad, 24px);
+    padding: 17px 0 0;
     background: var(--hero-bg, #0c2340);
   }
   .hero-banner-mobile .hero-banner-card {
@@ -3174,7 +3174,7 @@ button:focus-visible, a:focus-visible {
   .hero-badge { font-size: 12px; }
 
   /* Мобильный баннер */
-  .hero-banner-mobile { padding: 0 16px 16px; }
+  .hero-banner-mobile { padding: 17px 0 0; }
 
   /* Заголовки секций */
   .section-title   { font-size: clamp(1.3rem, 6vw, 1.7rem); }
