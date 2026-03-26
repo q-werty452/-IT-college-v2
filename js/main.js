@@ -19,10 +19,11 @@ if (btt) btt.onclick = function() { window.scrollTo({top:0,behavior:'smooth'}); 
 var toggle = document.getElementById('nav-toggle');
 var mobile = document.getElementById('nav-mobile');
 var mclose = document.getElementById('nav-mobile-close');
-if (toggle) toggle.onclick = function() { mobile.classList.add('open'); };
-if (mclose) mclose.onclick = function() { mobile.classList.remove('open'); };
+if (toggle) toggle.onclick = function() { mobile.classList.add('open'); toggle.classList.add('open'); };
+function closeMenu() { mobile.classList.remove('open'); if (toggle) toggle.classList.remove('open'); }
+if (mclose) mclose.onclick = closeMenu;
 if (mobile) mobile.addEventListener('click', function(e) {
-  if (e.target === mobile) mobile.classList.remove('open');
+  if (e.target === mobile) closeMenu();
 });
 
 // ── Фильтр программ обучения ───────────────────────────────────────────────
