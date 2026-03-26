@@ -3093,3 +3093,114 @@ button:focus-visible, a:focus-visible {
 }
 
 
+/* ============================================================
+   АДАПТИВНОСТЬ — 3 уровня
+   Десктоп  : > 1024px  (базовые стили)
+   Планшет  : 641px – 1024px
+   Мобильный: ≤ 640px
+   ============================================================ */
+
+/* ── Планшет (641px – 1024px) ──────────────────────────────── */
+@media (min-width: 641px) and (max-width: 1024px) {
+  /* Герой */
+  .hero { padding: 72px 24px 56px; }
+  .hero-inner { gap: 32px; }
+  .hero-visual .hero-banner-card,
+  .banner-track,
+  .banner-slide,
+  .banner-slide img { min-height: 300px; }
+  .hero-btns { flex-wrap: wrap; gap: 10px; }
+
+  /* Заголовки секций */
+  .section-title { font-size: clamp(1.5rem, 3vw, 2rem); }
+
+  /* Статистика */
+  .stats-modern-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+
+  /* О нас */
+  .about-grid { gap: 28px; }
+
+  /* Программы */
+  .programs-grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* Карточки (новости, выпускники) */
+  .cards-grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* Преимущества */
+  .adv-grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* Шаги */
+  .steps-grid { grid-template-columns: repeat(2, 1fr); }
+  .steps-grid::before { display: none; }
+
+  /* Футер */
+  .footer-inner { grid-template-columns: 1fr 1fr; gap: 28px; }
+
+  /* НПА */
+  .npa-pdf-viewer iframe { height: 500px; }
+  .npa-pdf-viewer.open  { max-height: 540px; }
+
+  /* Партнёры */
+  .partners-row { gap: 24px; }
+}
+
+/* ── Мобильный (≤ 640px) ────────────────────────────────────── */
+@media (max-width: 640px) {
+  /* Герой */
+  .hero { padding: 80px 16px 24px; }
+  .hero h1 { font-size: clamp(1.7rem, 7vw, 2.2rem); }
+  .hero p  { font-size: 0.95rem; }
+  .hero-btns { flex-direction: column; gap: 10px; }
+  .hero-btns .btn { width: 100%; justify-content: center; text-align: center; }
+  .hero-badge { font-size: 12px; }
+
+  /* Мобильный баннер */
+  .hero-banner-mobile { padding: 0 16px 16px; }
+
+  /* Заголовки секций */
+  .section-title   { font-size: clamp(1.3rem, 6vw, 1.7rem); }
+  .section-subtitle { font-size: 0.9rem; }
+  .section         { padding: 48px 0; }
+
+  /* Статистика (верхняя полоса) */
+  .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+  .stats-modern-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .stats-modern { padding: 36px 0; }
+
+  /* Программы */
+  .programs-grid { grid-template-columns: 1fr; }
+
+  /* О нас */
+  .about-grid { grid-template-columns: 1fr; gap: 24px; }
+  .about-card-stats { grid-template-columns: repeat(2, 1fr); }
+  .about-float-badge { right: 12px; bottom: 12px; }
+
+  /* Преимущества */
+  .adv-grid { grid-template-columns: 1fr; }
+
+  /* Шаги */
+  .steps-grid { grid-template-columns: 1fr; gap: 16px; }
+  .steps-grid::before { display: none; }
+
+  /* Карточки (новости, выпускники) */
+  .cards-grid { grid-template-columns: 1fr; }
+
+  /* НПА */
+  .npa-header { padding: 16px 14px; }
+  .npa-docs   { padding: 10px 14px 18px; }
+  .npa-title  { font-size: 13px; }
+  .npa-pdf-viewer iframe { height: 280px; }
+  .npa-pdf-viewer.open  { max-height: 320px; }
+
+  /* Футер */
+  .footer-inner { grid-template-columns: 1fr; gap: 24px; }
+  .footer-bottom { flex-direction: column; align-items: center; gap: 6px; text-align: center; }
+
+  /* Партнёры */
+  .partners-row { gap: 16px; flex-wrap: wrap; justify-content: center; }
+  .partner-logo { max-width: 100px; }
+
+  /* Кнопка наверх */
+  #btt { bottom: 16px; right: 16px; width: 40px; height: 40px; }
+}
+
