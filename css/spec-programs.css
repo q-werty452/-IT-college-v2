@@ -445,7 +445,8 @@
   .pgm-wrap .cta-btns .btn { width: 100%; max-width: 300px; justify-content: center; }
 }
 @media (max-width: 640px) {
-  .pgm-wrap .page-hero { padding: 56px 16px 48px; }
+  /* Горизонтальный отступ через .container, поэтому 0 у секций */
+  .pgm-wrap .page-hero { padding: 56px 0 48px; }
   .pgm-wrap .page-hero h1 { font-size: clamp(1.5rem, 6vw, 2rem); }
   .pgm-wrap .section { padding: 40px 0; }
   .pgm-wrap .search-bar { max-width: 100%; }

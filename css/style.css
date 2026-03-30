@@ -211,7 +211,7 @@ button:focus-visible, a:focus-visible {
 
 .nav-dropdown {
   position: absolute;
-  top: calc(100% + 8px);
+  top: calc(100% + 4px);
   left: 0;
   background: #fff;
   border: 1px solid var(--border);
@@ -222,9 +222,19 @@ button:focus-visible, a:focus-visible {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transform: translateY(-8px);
-  /* закрытие: задержка 1.2с, потом плавное исчезновение за 0.3с */
-  transition: opacity .3s ease 1s, transform .3s ease 1s, visibility 0s linear 1.3s;
+  transform: translateY(-6px);
+  /* закрытие: небольшая задержка чтобы не мигало */
+  transition: opacity .25s ease .35s, transform .25s ease .35s, visibility 0s linear .6s;
+}
+
+/* Мост для 4px зазора — мышь не теряет hover при переходе к выпадению */
+.nav-dropdown::before {
+  content: '';
+  position: absolute;
+  top: -12px;
+  left: 0;
+  width: 100%;
+  height: 12px;
 }
 
 .nav-item:hover .nav-dropdown {
@@ -301,11 +311,13 @@ button:focus-visible, a:focus-visible {
 }
 
 .nav-mobile {
-  display: none;
   position: fixed;
   inset: 0;
-  z-index: 999;
-  background: rgba(0, 0, 0, .5);
+  z-index: 1001;
+  background: rgba(0, 0, 0, 0);
+  visibility: hidden;
+  pointer-events: none;
+  transition: background .35s ease, visibility 0s linear .35s;
 }
 
 .nav-mobile-inner {
@@ -319,10 +331,14 @@ button:focus-visible, a:focus-visible {
   overflow-y: auto;
   transform: translateX(100%);
   transition: transform .35s cubic-bezier(.4, 0, .2, 1);
+  box-shadow: -8px 0 32px rgba(0,0,0,.18);
 }
 
 .nav-mobile.open {
-  display: block;
+  background: rgba(0, 0, 0, .5);
+  visibility: visible;
+  pointer-events: auto;
+  transition: background .35s ease, visibility 0s linear 0s;
 }
 
 .nav-mobile.open .nav-mobile-inner {
@@ -331,23 +347,27 @@ button:focus-visible, a:focus-visible {
 
 .nav-mobile-close {
   position: absolute;
-  top: 16px;
-  right: 16px;
-  width: 36px;
-  height: 36px;
+  top: 14px;
+  right: 14px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   background: var(--light);
-  border: none;
-  font-size: 20px;
+  border: 1.5px solid var(--border);
   color: var(--dark);
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background var(--transition);
+  transition: background var(--transition), transform var(--transition);
+  cursor: pointer;
+  z-index: 10;
+  -webkit-tap-highlight-color: transparent;
 }
 
-.nav-mobile-close:hover {
+.nav-mobile-close:hover,
+.nav-mobile-close:active {
   background: var(--border);
+  transform: scale(1.08);
 }
 
 .nav-mobile a {
@@ -3165,8 +3185,11 @@ button:focus-visible, a:focus-visible {
 
 /* ── Мобильный (≤ 640px) ────────────────────────────────────── */
 @media (max-width: 640px) {
-  /* Герой */
-  .hero { padding: 80px 16px 24px; }
+  /* Контейнер — горизонтальные отступы для всего контента на мобилке */
+  .container { padding-left: 16px; padding-right: 16px; }
+
+  /* Герой: фон полноширинный, отступ через контейнер */
+  .hero { padding: 80px 0 24px; }
   .hero h1 { font-size: clamp(1.7rem, 7vw, 2.2rem); }
   .hero p  { font-size: 0.95rem; }
   .hero-btns { flex-direction: column; gap: 10px; }
